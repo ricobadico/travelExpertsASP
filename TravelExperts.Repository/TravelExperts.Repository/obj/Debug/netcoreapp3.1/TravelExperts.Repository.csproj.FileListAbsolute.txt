@@ -1,0 +1,12 @@
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\netcoreapp3.1\TravelExperts.Repository.deps.json
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\netcoreapp3.1\TravelExperts.Repository.runtimeconfig.json
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\netcoreapp3.1\TravelExperts.Repository.runtimeconfig.dev.json
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\netcoreapp3.1\TravelExperts.Repository.dll
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\netcoreapp3.1\TravelExperts.Repository.pdb
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\netcoreapp3.1\TravelExperts.Repository.csprojAssemblyReference.cache
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\netcoreapp3.1\TravelExperts.Repository.AssemblyInfoInputs.cache
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\netcoreapp3.1\TravelExperts.Repository.AssemblyInfo.cs
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\netcoreapp3.1\TravelExperts.Repository.csproj.CoreCompileInputs.cache
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\netcoreapp3.1\TravelExperts.Repository.dll
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\netcoreapp3.1\TravelExperts.Repository.pdb
+C:\Users\862231\Desktop\Project 2\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\netcoreapp3.1\TravelExperts.Repository.genruntimeconfig.cache
