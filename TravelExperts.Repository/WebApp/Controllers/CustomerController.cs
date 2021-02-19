@@ -7,12 +7,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApp.Models;
 using TravelExperts.Repository.Domain;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace TravelExpertsWebApp.Controllers
 {
     public class CustomerController : Controller
     {
+        
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         public IActionResult Add()
         {
 
