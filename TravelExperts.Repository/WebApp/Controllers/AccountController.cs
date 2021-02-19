@@ -24,7 +24,7 @@ namespace TravelExpertsWebApp.Controllers
 
         // POST overload of login that checks the database for a matching user, then Authenticates them
         [HttpPost]
-        public async Task<IActionResult> LoginAsync(CustAccountModel loginAttempt)
+        public async Task<IActionResult> LoginAsync(CustAccountData loginAttempt)
         {
             // Attempt to find a matching user -> if none, returns null
             var usr = AccountManager.Authenticate(loginAttempt.Login, loginAttempt.Password);
