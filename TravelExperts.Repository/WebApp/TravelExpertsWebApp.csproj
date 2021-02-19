@@ -27,10 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TravelExperts.BLL\TravelExperts.BLL.csproj" />
     <ProjectReference Include="..\TravelExperts.Repository\TravelExperts.Repository.csproj" />
   </ItemGroup>
