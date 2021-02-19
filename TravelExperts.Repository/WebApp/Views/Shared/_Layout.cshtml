@@ -9,7 +9,31 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+        <label for="page-nav-toggle">
+            <svg class="icon--menu-toggle" viewBox="0 0 60 30">
+                <g class="icon-group">
+                    <g class="icon--menu">
+                        <path d="M 6 0 L 54 0" />
+                        <path d="M 6 15 L 54 15" />
+                        <path d="M 6 30 L 54 30" />
+                    </g>
+                    <g class="icon--close">
+                        <path d="M 15 0 L 45 30" />
+                        <path d="M 15 30 L 45 0" />
+                    </g>
+                </g>
+            </svg>
+        </label>
+
+        <nav class="main-navigation">
+            <ul>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Travel Experts</a></li>
+                <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                <li><a asp-area="" asp-controller="Customer" asp-action="Index">Register</a></li>
+            </ul>
+        </nav>
+        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Travel Experts</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -41,7 +65,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>*@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
