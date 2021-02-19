@@ -4,6 +4,64 @@
     "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\WebApp\\TravelExpertsWebApp.csproj": {}
   },
   "projects": {
+    "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
+        "projectName": "TravelExperts.BLL",
+        "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
+        "packagesPath": "C:\\Users\\862231\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\862231\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
+                "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -98,6 +156,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj": {
+                "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj"
+              },
               "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
                 "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj"
               }

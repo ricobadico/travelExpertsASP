@@ -1,0 +1,26 @@
+﻿@model CPRG214.Properties.Presentation.Models.CustAccountModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form asp-action="Login">
+    <h3>Login</h3>
+
+    <table class="table">
+        <tr>
+            <td>Login:</td>
+            <td><input type="text" asp-for="Login" /></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" asp-for="Password" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Authenticate" class="btn btn-primary" /></td>
+        </tr>
+    </table>
+    <h4 class="text-danger">@ViewBag.BadLogin</h4>
+
+</form>
+
+

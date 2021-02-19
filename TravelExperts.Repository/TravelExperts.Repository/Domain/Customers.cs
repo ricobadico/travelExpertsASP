@@ -24,6 +24,8 @@ namespace TravelExperts.Repository.Domain
         public string CustBusPhone { get; set; }
         public string CustEmail { get; set; }
         public int? AgentId { get; set; }
+        public string UserLogin { get; set; }
+        public string UserPass { get; set; }
 
         public virtual Agents Agent { get; set; }
         public virtual ICollection<Bookings> Bookings { get; set; }

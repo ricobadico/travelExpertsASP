@@ -2172,6 +2172,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "TravelExperts.BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "TravelExperts.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TravelExperts.BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TravelExperts.BLL.dll": {}
+        }
+      },
       "TravelExperts.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -7474,6 +7487,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "TravelExperts.BLL/1.0.0": {
+      "type": "project",
+      "path": "../TravelExperts.BLL/TravelExperts.BLL.csproj",
+      "msbuildProject": "../TravelExperts.BLL/TravelExperts.BLL.csproj"
+    },
     "TravelExperts.Repository/1.0.0": {
       "type": "project",
       "path": "../TravelExperts.Repository/TravelExperts.Repository.csproj",
@@ -7486,6 +7504,7 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.2",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "TravelExperts.BLL >= 1.0.0",
       "TravelExperts.Repository >= 1.0.0"
     ]
   },
@@ -7516,6 +7535,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj": {
+              "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj"
+            },
             "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
               "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj"
             }

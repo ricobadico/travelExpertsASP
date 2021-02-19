@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace TravelExperts.Repository.Domain
 {
@@ -38,16 +37,14 @@ namespace TravelExperts.Repository.Domain
         public virtual DbSet<SupsOld> SupsOld { get; set; }
         public virtual DbSet<TripTypes> TripTypes { get; set; }
 
-
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Server=localhost\\sqlexpress;Database=TravelExperts;Trusted_Connection=True;");
-//            }
-//        }
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=TravelExperts;Trusted_Connection=True;");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -267,13 +264,15 @@ namespace TravelExperts.Repository.Domain
                 entity.HasIndex(e => e.AgentId)
                     .HasName("EmployeesCustomers");
 
+                entity.HasIndex(e => e.UserLogin)
+                    .HasName("UQ__Customer__7F8E8D5E942FBEB9")
+                    .IsUnique();
+
                 entity.Property(e => e.CustAddress)
                     .IsRequired()
                     .HasMaxLength(75);
 
-                entity.Property(e => e.CustBusPhone)
-                    .IsRequired()
-                    .HasMaxLength(20);
+                entity.Property(e => e.CustBusPhone).HasMaxLength(20);
 
                 entity.Property(e => e.CustCity)
                     .IsRequired()
@@ -281,15 +280,15 @@ namespace TravelExperts.Repository.Domain
 
                 entity.Property(e => e.CustCountry).HasMaxLength(25);
 
-                entity.Property(e => e.CustEmail)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.CustEmail).HasMaxLength(50);
 
                 entity.Property(e => e.CustFirstName)
                     .IsRequired()
                     .HasMaxLength(25);
 
-                entity.Property(e => e.CustHomePhone).HasMaxLength(20);
+                entity.Property(e => e.CustHomePhone)
+                    .IsRequired()
+                    .HasMaxLength(20);
 
                 entity.Property(e => e.CustLastName)
                     .IsRequired()
@@ -302,6 +301,14 @@ namespace TravelExperts.Repository.Domain
                 entity.Property(e => e.CustProv)
                     .IsRequired()
                     .HasMaxLength(2);
+
+                entity.Property(e => e.UserLogin)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.UserPass)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
                 entity.HasOne(d => d.Agent)
                     .WithMany(p => p.Customers)
@@ -560,10 +567,10 @@ namespace TravelExperts.Repository.Domain
             modelBuilder.Entity<Suppliers>(entity =>
             {
                 entity.HasKey(e => e.SupplierId)
-                    .HasName("PK__Supplier__4BE666B42A47F61D");
+                    .HasName("PK__Supplier__4BE666B46E379086");
 
                 entity.HasIndex(e => e.SupName)
-                    .HasName("UQ__Supplier__C13D2C4A0DC53D9C")
+                    .HasName("UQ__Supplier__C13D2C4A1B8F222E")
                     .IsUnique();
 
                 entity.Property(e => e.SupName)
