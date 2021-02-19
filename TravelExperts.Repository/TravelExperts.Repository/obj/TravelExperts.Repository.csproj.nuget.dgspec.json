@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {}
+    "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {}
   },
   "projects": {
-    "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
+    "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
         "projectName": "TravelExperts.Repository",
-        "projectPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
-        "packagesPath": "C:\\Users\\862231\\.nuget\\packages\\",
-        "outputPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\obj\\",
+        "projectPath": "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
+        "packagesPath": "C:\\Users\\811405\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\862231\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\811405\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
