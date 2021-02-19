@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\WebApp\\TravelExpertsWebApp.csproj": {}
+    "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\WebApp\\TravelExpertsWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj": {
+    "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
+        "projectUniqueName": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
         "projectName": "TravelExperts.BLL",
-        "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
+        "projectPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
         "packagesPath": "C:\\Users\\862231\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\obj\\",
+        "outputPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\862231\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
-                "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj"
+              "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
+                "projectPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj"
               }
             }
           }
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
+    "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
+        "projectUniqueName": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
         "projectName": "TravelExperts.Repository",
-        "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
+        "projectPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
         "packagesPath": "C:\\Users\\862231\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\obj\\",
+        "outputPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\862231\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -132,14 +132,14 @@
         }
       }
     },
-    "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\WebApp\\TravelExpertsWebApp.csproj": {
+    "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\WebApp\\TravelExpertsWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\WebApp\\TravelExpertsWebApp.csproj",
+        "projectUniqueName": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\WebApp\\TravelExpertsWebApp.csproj",
         "projectName": "TravelExpertsWebApp",
-        "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\WebApp\\TravelExpertsWebApp.csproj",
+        "projectPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\WebApp\\TravelExpertsWebApp.csproj",
         "packagesPath": "C:\\Users\\862231\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\WebApp\\obj\\",
+        "outputPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\862231\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -156,11 +156,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj": {
-                "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj"
+              "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj": {
+                "projectPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj"
               },
-              "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
-                "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj"
+              "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
+                "projectPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj"
               }
             }
           }

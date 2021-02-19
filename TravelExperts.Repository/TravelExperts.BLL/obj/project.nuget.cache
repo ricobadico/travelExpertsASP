@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YWkLpXcYr26xbgrqzZ/5WoPZYg9JfbMsgfBgCmluIBu8kzMIo8dxjcsa2mUhKUQN4b3oZpfI52vw2AmPuen4ng==",
+  "dgSpecHash": "ymvVLfjf1zeF3tTzJ6jYmxRElBLo3khD+mjIbqfzlvnywju1+TFgF/vvTzNOuiQgjuCSrZrl+3YN+8ziaJesdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
+  "projectFilePath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\862231\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\862231\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

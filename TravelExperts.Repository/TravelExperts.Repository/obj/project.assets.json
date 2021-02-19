@@ -8245,11 +8245,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
+      "projectUniqueName": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
       "projectName": "TravelExperts.Repository",
-      "projectPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
+      "projectPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj",
       "packagesPath": "C:\\Users\\862231\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\862231\\Desktop\\Project 2\\TravelExperts.Repository\\TravelExperts.Repository\\obj\\",
+      "outputPath": "C:\\xampp\\htdocs\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\862231\\AppData\\Roaming\\NuGet\\NuGet.Config",

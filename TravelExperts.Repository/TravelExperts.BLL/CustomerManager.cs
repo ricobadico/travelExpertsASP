@@ -9,10 +9,11 @@ namespace TravelExperts.BLL
 {
     public class CustomerManager
     {
-        public static void Add()
+        public static void Add(Customers customer)
         {
             var db = new TravelExpertsContext();
-            
+            db.Customers.Add(customer);
+            db.SaveChanges();
         }
     }
 }
