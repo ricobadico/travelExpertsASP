@@ -520,3 +520,5 @@ C:\xampp\htdocs\TravelExpertsWeb\TravelExperts.Repository\WebApp\obj\Debug\net5.
 C:\xampp\htdocs\TravelExpertsWeb\TravelExperts.Repository\WebApp\obj\Debug\net5.0\ref\TravelExpertsWebApp.dll
 C:\xampp\htdocs\TravelExpertsWeb\TravelExperts.Repository\WebApp\obj\Debug\net5.0\TravelExpertsWebApp.pdb
 C:\xampp\htdocs\TravelExpertsWeb\TravelExperts.Repository\WebApp\obj\Debug\net5.0\TravelExpertsWebApp.genruntimeconfig.cache
+C:\Users\811405\source\repos\assignments\TravelExpertsWeb\TravelExperts.Repository\WebApp\bin\Debug\net5.0\BCrypt.Net-Next.dll
+C:\Users\811405\source\repos\assignments\TravelExpertsWeb\TravelExperts.Repository\WebApp\obj\Debug\net5.0\Razor\Views\Shared\GreetUser.cshtml.g.cs
