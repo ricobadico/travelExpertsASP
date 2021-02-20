@@ -15,5 +15,13 @@ namespace TravelExperts.BLL
             db.Customers.Add(customer);
             db.SaveChanges();
         }
+
+        public static Customers FindById(int custId)
+        {
+            TravelExpertsContext db = new TravelExpertsContext();
+            Customers matchCust = db.Customers.SingleOrDefault(c => c.CustomerId == custId);
+
+            return matchCust;
+        }
     }
 }
