@@ -7,17 +7,17 @@
 <!-- MultiStep Form -->
 <div class="container-fluid" id="grad1">
     <div class="row justify-content-center mt-3">
-        <div class="col-11 text-center p-0 mt-3 mb-2">
+        <div class="col-10 text-center p-0 mt-3 mb-2">
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                 <h2><strong>Sign Up Your User Account</strong></h2>
                 <p>Fill all form field to go to next step</p>
                 <div class="row">
                     <div class="col-md-12 mx-0">
-                        <form id="msform" asp-action="Add">
+                        <form id="msform" asp-action="Add" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active" id="account"></i><strong>Account</strong></li>
+                                <li class="active" id="account"><strong>Account</strong></li>
                                 <li id="personal"><strong>Personal</strong></li>
                                 <li id="confirm"><strong>Finish</strong></li>
                             </ul> <!-- fieldsets -->
@@ -26,8 +26,8 @@
                                     <h2 class="fs-title">Account Information</h2>
                                     <div class="form-group">
                                         <label asp-for="UserLogin" class="control-label"></label>
-                                        <input asp-for="UserLogin" class="form-control" />
-                                        <span id="username" asp-validation-for="UserLogin" class="text-danger"></span>
+                                        <input id="UserName" asp-for="UserLogin" class="form-control" />
+                                        <span id="usrNameErrMessage" asp-validation-for="UserLogin" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
                                         <label asp-for="UserPass" class="control-label"></label>
@@ -110,17 +110,18 @@
 
                                 </div> 
                                 <input type="button" name="previous" class="btn previous action-button-previous" value="Previous" />
-                                <input type="button" name="next" class="btn next action-button" value="Next Step" />
+                                <input type="submit" name="submit" class="btn next action-button" value="Submit" />
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title text-center">Success !</h2> <br><br>
                                     <div class="row justify-content-center">
-                                        <div class="col-3"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png" class="fit-image"> </div>
+                                        <a id="redirect" asp-controller="Home" asp-action="Index">Book Your Package Today!
+                                        </a>
                                     </div> <br><br>
                                     <div class="row justify-content-center">
                                         <div class="col-7 text-center">
-                                            <h3>You Have Successfully Signed Up</h3>
+                                            <h5>You Have Successfully Signed Up</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -135,9 +136,9 @@
 
 
 @section Scripts{ 
-    <script>
+    <script type="text/javascript" src="~/js/CustomerRegistration.js">
         $(document).ready(function () {
-
+            // validate the password
             $('input[type=password]').keyup(function () {
                 let pswd = $(this).val();
 
@@ -171,38 +172,55 @@
                 } else {
                     $('#length').removeClass('invalid').addClass('valid');
                 }
-            });
+            }); // end of password validation
 
-            
-            var current_fs, next_fs, previous_fs; //fieldsets
-            var opacity;
 
+            // validate the username
             $(".next").click(function () {
+                var name = $("#UserName").val();
+                $.ajax({
+                    method: 'GET',
+                    url: "Customer/Exist",
+                    data: { username: name }
+                }).done(function (resutls) {
+                    var passed = false;
+                    if (resutls == "")
+                        passed = true;
+                    else
+                        $("#usrNameErrMessage").html(resutls);
 
-                current_fs = $(this).parent();
-                next_fs = $(this).parent().next();
+                    // if it passes username validation
+                    if (passed == true) {
+                        var current_fs, next_fs, previous_fs; //fieldsets
+                        var opacity;
 
-                //add class Active
-                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+                        current_fs = $(this).parent();
+                        next_fs = $(this).parent().next();
 
-                //show the next fieldset
-                next_fs.show();
+                        //add class Active
+                        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
-                //hide the current fieldset with style
-                current_fs.animate({ opacity: 0 }, {
-                    step: function (now) {
-                        // for making fieldset appear animation
-                        opacity = 1 - now;
+                        //show the next fieldset
+                        next_fs.show();
 
-                        current_fs.css({
-                            'display': 'none',
-                            'position': 'relative'
+                        //hide the current fieldset with style
+                        current_fs.animate({ opacity: 0 }, {
+                            step: function (now) {
+                                // for making fieldset appear animation
+                                opacity = 1 - now;
+
+                                current_fs.css({
+                                    'display': 'none',
+                                    'position': 'relative'
+                                });
+                                next_fs.css({ 'opacity': opacity });
+                            },
+                            duration: 600
                         });
-                        next_fs.css({ 'opacity': opacity });
-                    },
-                    duration: 600
-                });
-            });
+                    }
+                }); // end of ajax
+            }); //end of next click
+
 
             $(".previous").click(function () {
 
@@ -229,25 +247,8 @@
                     },
                     duration: 600
                 });
-            });
-
-            $(".submit").click(function () {
-                return false;
-            })
-
-        });
-
-        // validate password //
-        $(document).ready(function () {
-
-            
-
-            // convert to uppercase
-            $('#zipcode').keyup(function () {
-                $(this).val($(this).val().toUpperCase());
-            });
-
-        });
+            }); // end of previous click
+        }); // end of document ready
     </script>
 
 }

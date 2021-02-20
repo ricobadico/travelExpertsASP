@@ -49,7 +49,6 @@ C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\Trave
 C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\net5.0\TravelExperts.Repository.dll
 C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\net5.0\ref\TravelExperts.Repository.dll
 C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\net5.0\TravelExperts.Repository.pdb
-C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.csprojAssemblyReference.cache
 C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.AssemblyInfoInputs.cache
 C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.AssemblyInfo.cs

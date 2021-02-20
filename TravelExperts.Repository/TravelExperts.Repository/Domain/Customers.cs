@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace TravelExperts.Repository.Domain
 {
-    public partial class Customers
+    public partial class Customer
     {
-        public Customers()
+        public Customer()
         {
             Bookings = new HashSet<Bookings>();
             CreditCards = new HashSet<CreditCards>();
