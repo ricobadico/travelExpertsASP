@@ -53,18 +53,35 @@ namespace TravelExpertsWebApp.Controllers
             return Content(content);
         }
 
+        // Allows user to edit their details and send them as a form
         [Authorize]
         public IActionResult Manage()
         {
             // Get customer ID from user indentity (since this is an authorized action, this is safe)
             int custID = Convert.ToInt32(User.Identity.Name);
 
-            // Connect to db
-            TravelExpertsContext db = new TravelExpertsContext();
-
             Customer customer = CustomerManager.FindById(custID);
 
             return View(customer);
+        }
+
+        // Post overload that takes the submitted changes to their customer data and saves them to the database
+        [Authorize]
+        [HttpPost]
+        public IActionResult Manage(Customer editedCustomer)
+        {
+            try
+            {
+                // Attempt to update customer in db
+                CustomerManager.Update(editedCustomer);
+
+                return RedirectToAction("Index", "Home"); //TODO: maybe this should go elsewhere
+            }
+            catch
+            {
+                return View();
+            }
+          
         }
 
 
