@@ -21,7 +21,7 @@
                                 <li id="personal"><strong>Personal</strong></li>
                                 <li id="confirm"><strong>Finish</strong></li>
                             </ul> <!-- fieldsets -->
-                            <fieldset>
+                            <fieldset id="firstFS">
                                 <div class="form-card">
                                     <h2 class="fs-title">Account Information</h2>
                                     <div class="form-group">
@@ -136,7 +136,8 @@
 
 
 @section Scripts{ 
-    <script type="text/javascript" src="~/js/CustomerRegistration.js">
+    @*Removed link to empty script*@
+    <script> 
         $(document).ready(function () {
             // validate the password
             $('input[type=password]').keyup(function () {
@@ -194,8 +195,8 @@
                         var current_fs, next_fs, previous_fs; //fieldsets
                         var opacity;
 
-                        current_fs = $(this).parent();
-                        next_fs = $(this).parent().next();
+                        current_fs = $("#firstFS"); @*Gave this set an id to anchor to (works since there's only the 1 fieldset "next" goes to)*@
+                        next_fs = $(current_fs).next(); @* Referred this directly to that first fieldset *@
 
                         //add class Active
                         $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
