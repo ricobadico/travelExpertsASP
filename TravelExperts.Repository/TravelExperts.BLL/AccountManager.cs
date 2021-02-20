@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TravelExperts.Repository.Domain;
+using bcrypt = BCrypt.Net.BCrypt; 
 
-namespace TravelExpertsWebApp.Models
+namespace TravelExperts.BLL
 {
     /// <summary>
-    /// Data transfer object to pass needed customer data around site
+    /// Reduced customer data to function as the model for login
+    /// and as a data transfer object to pass needed customer data around site
     /// </summary>
-    public class CustAccountData
+    public class CredentialModel
     {
         public int? CustId { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public string FirstName { get; set; }
+
+        public static object Authenticate(string login, string password)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     /// <summary>
@@ -29,10 +36,14 @@ namespace TravelExpertsWebApp.Models
         /// <param name="login">Login as string</param>
         /// <param name="pass">Password as string</param>
         /// <returns>A user data transfer object or null.</returns>
-        public static CustAccountData Authenticate(string login, string pass)
+        public static CredentialModel Authenticate(string login, string pass)
         {
+            // get the hashed version of the password provided
+            //string hashedPass = bcrypt.HashPassword(pass);
+
+
             // Initialize a user object with null reference
-            CustAccountData user = null;
+            CredentialModel user = null;
 
             // Connect to the db
             TravelExpertsContext context = new TravelExpertsContext();
@@ -43,9 +54,9 @@ namespace TravelExpertsWebApp.Models
                 && c.UserPass == pass);
 
             // If a match was found, create a DTO with needed information
-            if  (cust != null)
+            if (cust != null)
             {
-                user = new CustAccountData
+                user = new CredentialModel
                 {
                     CustId = cust.CustomerId,
                     Login = cust.UserLogin,
@@ -56,4 +67,5 @@ namespace TravelExpertsWebApp.Models
             return user; //this will either be null or an object
         }
     }
+
 }

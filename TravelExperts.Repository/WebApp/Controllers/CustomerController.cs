@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApp.Models;
 using TravelExperts.Repository.Domain;
+using Microsoft.AspNetCore.Authorization;
 using TravelExperts.BLL;
 using TravelExpertsWebApp.Models;
 
@@ -51,6 +52,22 @@ namespace TravelExpertsWebApp.Controllers
 
             return Content(content);
         }
+
+        [Authorize]
+        public IActionResult Manage()
+        {
+            // Get customer ID from user indentity (since this is an authorized action, this is safe)
+            int custID = Convert.ToInt32(User.Identity.Name);
+
+            // Connect to db
+            TravelExpertsContext db = new TravelExpertsContext();
+
+            Customers customer = CustomerManager.FindById(custID);
+
+            return View(customer);
+        }
+
+
 
     }
 }

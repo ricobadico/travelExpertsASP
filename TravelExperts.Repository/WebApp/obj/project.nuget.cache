@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WbtLPAOOIO7d+H63T7+x6inJ5VgUogDH8THoEtDTjPfMtLq1uQoXYBMabiBmVXvdpfHlOgfpaY+azPCTaww2Fg==",
+  "dgSpecHash": "VrGuHmsyzpBeHA61UE2JzO3gz0UbB06os43q2YvEiQVLqwHYsBvT1sBmYNbs7kAioh691nBmW132WtjhloEpnQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\WebApp\\TravelExpertsWebApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\811405\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\811405\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\811405\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\811405\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

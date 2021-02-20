@@ -26,5 +26,13 @@ namespace TravelExperts.BLL
             else
                 return true;
         }
+
+        public static Customers FindById(int custId)
+        {
+            TravelExpertsContext db = new TravelExpertsContext();
+            Customers matchCust = db.Customers.SingleOrDefault(c => c.CustomerId == custId);
+
+            return matchCust;
+        }
     }
 }
