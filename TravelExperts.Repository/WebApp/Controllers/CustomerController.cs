@@ -62,7 +62,7 @@ namespace TravelExpertsWebApp.Controllers
             // Connect to db
             TravelExpertsContext db = new TravelExpertsContext();
 
-            Customers customer = CustomerManager.FindById(custID);
+            Customer customer = CustomerManager.FindById(custID);
 
             return View(customer);
         }

@@ -874,3 +874,6 @@ C:\Users\860234\Documents\.Net Web Application\TravelExpertsWeb\TravelExperts.Re
 C:\Users\860234\Documents\.Net Web Application\TravelExpertsWeb\TravelExperts.Repository\WebApp\obj\Debug\net5.0\TravelExpertsWebApp.genruntimeconfig.cache
 C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\WebApp\obj\Debug\net5.0\Razor\Views\Customer\Create.cshtml.g.cs
 C:\Users\811405\source\repos\assignments\TravelExpertsWeb\TravelExperts.Repository\WebApp\obj\Debug\net5.0\Razor\Views\Customer\Create.cshtml.g.cs
+C:\Users\811405\source\repos\assignments\TravelExpertsWeb\TravelExperts.Repository\WebApp\obj\Debug\net5.0\Razor\Views\Customer\Manage.cshtml.g.cs
+C:\Users\811405\source\repos\assignments\TravelExpertsWeb\TravelExperts.Repository\WebApp\obj\Debug\net5.0\Razor\Views\Shared\GreetUser.cshtml.g.cs
+C:\Users\811405\source\repos\assignments\TravelExpertsWeb\TravelExperts.Repository\WebApp\bin\Debug\net5.0\BCrypt.Net-Next.dll
