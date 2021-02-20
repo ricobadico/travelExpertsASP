@@ -21,7 +21,7 @@
                                 <li id="personal"><strong>Personal</strong></li>
                                 <li id="confirm"><strong>Finish</strong></li>
                             </ul> <!-- fieldsets -->
-                            <fieldset id="firstFS">
+                            <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title">Account Information</h2>
                                     <div class="form-group">
@@ -108,7 +108,7 @@
                                         </div>
                                     </div>
 
-                                </div> 
+                                </div>
                                 <input type="button" name="previous" class="btn previous action-button-previous" value="Previous" />
                                 <input type="submit" name="submit" class="btn next action-button" value="Submit" />
                             </fieldset>
@@ -116,7 +116,8 @@
                                 <div class="form-card">
                                     <h2 class="fs-title text-center">Success !</h2> <br><br>
                                     <div class="row justify-content-center">
-                                        <a id="redirect" asp-controller="Home" asp-action="Index">Book Your Package Today!
+                                        <a id="redirect" asp-controller="Home" asp-action="Index">
+                                            Book Your Package Today!
                                         </a>
                                     </div> <br><br>
                                     <div class="row justify-content-center">
@@ -135,9 +136,8 @@
 </div>
 
 
-@section Scripts{ 
-    @*Removed link to empty script*@
-    <script> 
+@section Scripts{
+    <script type="text/javascript" src="~/js/CustomerRegistration.js">
         $(document).ready(function () {
             // validate the password
             $('input[type=password]').keyup(function () {
@@ -195,8 +195,8 @@
                         var current_fs, next_fs, previous_fs; //fieldsets
                         var opacity;
 
-                        current_fs = $("#firstFS"); @*Gave this set an id to anchor to (works since there's only the 1 fieldset "next" goes to)*@
-                        next_fs = $(current_fs).next(); @* Referred this directly to that first fieldset *@
+                        current_fs = $(this).parent();
+                        next_fs = $(this).parent().next();
 
                         //add class Active
                         $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
