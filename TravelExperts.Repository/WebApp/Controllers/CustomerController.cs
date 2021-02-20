@@ -7,23 +7,49 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApp.Models;
 using TravelExperts.Repository.Domain;
-
+using TravelExperts.BLL;
+using TravelExpertsWebApp.Models;
 
 namespace TravelExpertsWebApp.Controllers
 {
     public class CustomerController : Controller
     {
-        public IActionResult Add()
+        public IActionResult Index()
         {
-
             return View();
         }
-
-        [HttpPost]
-        public IActionResult Add(Customers customer)
+        
+        public IActionResult Add(CustomerModel customer)
         {
-
+            var cust = new Customer
+            {
+                CustAddress = customer.Address,
+                CustHomePhone = customer.HomePhone,
+                CustBusPhone = customer.BusPhone,
+                CustFirstName = customer.FirstName,
+                CustLastName = customer.LastName,
+                CustCity = customer.City,
+                CustCountry = customer.Country,
+                CustEmail = customer.Email,
+                CustPostal = customer.Postal,
+                CustProv = customer.Prov,
+                UserLogin = customer.UserLogin,
+                UserPass = customer.UserPass
+            };
+            CustomerManager.Add(cust);
             return RedirectToAction("Index", "Home");
+        }
+
+
+        public IActionResult Exist(string username)
+        {
+            var content = "";
+            if (CustomerManager.Exists(username))
+            {
+                content = "Username already exists, please use a different user name.";
+            }
+
+            return Content(content);
         }
 
     }

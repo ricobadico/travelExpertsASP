@@ -22,7 +22,7 @@ namespace TravelExperts.Repository.Domain
         public virtual DbSet<Bookings> Bookings { get; set; }
         public virtual DbSet<Classes> Classes { get; set; }
         public virtual DbSet<CreditCards> CreditCards { get; set; }
-        public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<CustomersRewards> CustomersRewards { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Fees> Fees { get; set; }
@@ -41,7 +41,6 @@ namespace TravelExperts.Repository.Domain
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=TravelExperts;Trusted_Connection=True;");
             }
         }
@@ -255,7 +254,7 @@ namespace TravelExperts.Repository.Domain
                     .HasConstraintName("CreditCards_FK00");
             });
 
-            modelBuilder.Entity<Customers>(entity =>
+            modelBuilder.Entity<Customer>(entity =>
             {
                 entity.HasKey(e => e.CustomerId)
                     .HasName("aaaaaCustomers_PK")

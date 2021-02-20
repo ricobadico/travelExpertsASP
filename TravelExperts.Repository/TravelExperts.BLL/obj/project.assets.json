@@ -8188,19 +8188,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\811405\\.nuget\\packages\\": {}
+    "C:\\Users\\860234\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
+      "projectUniqueName": "C:\\Users\\860234\\Documents\\GitHub\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
       "projectName": "TravelExperts.BLL",
-      "projectPath": "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
-      "packagesPath": "C:\\Users\\811405\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\obj\\",
+      "projectPath": "C:\\Users\\860234\\Documents\\GitHub\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\TravelExperts.BLL.csproj",
+      "packagesPath": "C:\\Users\\860234\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\860234\\Documents\\GitHub\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\811405\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\860234\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8214,8 +8214,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
-              "projectPath": "C:\\Users\\811405\\source\\repos\\assignments\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj"
+            "C:\\Users\\860234\\Documents\\GitHub\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj": {
+              "projectPath": "C:\\Users\\860234\\Documents\\GitHub\\TravelExpertsWeb\\TravelExperts.Repository\\TravelExperts.Repository\\TravelExperts.Repository.csproj"
             }
           }
         }

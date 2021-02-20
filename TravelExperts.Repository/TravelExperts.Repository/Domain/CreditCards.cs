@@ -11,6 +11,6 @@ namespace TravelExperts.Repository.Domain
         public DateTime Ccexpiry { get; set; }
         public int CustomerId { get; set; }
 
-        public virtual Customers Customer { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

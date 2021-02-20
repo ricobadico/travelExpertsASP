@@ -9,7 +9,7 @@ namespace TravelExperts.Repository.Domain
         public int RewardId { get; set; }
         public string RwdNumber { get; set; }
 
-        public virtual Customers Customer { get; set; }
+        public virtual Customer Customer { get; set; }
         public virtual Rewards Reward { get; set; }
     }
 }

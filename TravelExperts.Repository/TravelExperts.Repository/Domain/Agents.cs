@@ -7,7 +7,7 @@ namespace TravelExperts.Repository.Domain
     {
         public Agents()
         {
-            Customers = new HashSet<Customers>();
+            Customers = new HashSet<Customer>();
         }
 
         public int AgentId { get; set; }
@@ -20,6 +20,6 @@ namespace TravelExperts.Repository.Domain
         public int? AgencyId { get; set; }
 
         public virtual Agencies Agency { get; set; }
-        public virtual ICollection<Customers> Customers { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
     }
 }

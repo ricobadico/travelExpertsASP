@@ -43,3 +43,17 @@ C:\xampp\htdocs\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Reposito
 C:\xampp\htdocs\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\ref\TravelExperts.Repository.dll
 C:\xampp\htdocs\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.pdb
 C:\xampp\htdocs\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.genruntimeconfig.cache
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\net5.0\TravelExperts.Repository.deps.json
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\net5.0\TravelExperts.Repository.runtimeconfig.json
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\net5.0\TravelExperts.Repository.runtimeconfig.dev.json
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\net5.0\TravelExperts.Repository.dll
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\net5.0\ref\TravelExperts.Repository.dll
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\bin\Debug\net5.0\TravelExperts.Repository.pdb
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.AssemblyInfoInputs.cache
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.AssemblyInfo.cs
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.csproj.CoreCompileInputs.cache
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.dll
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\ref\TravelExperts.Repository.dll
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.pdb
+C:\Users\860234\Documents\GitHub\TravelExpertsWeb\TravelExperts.Repository\TravelExperts.Repository\obj\Debug\net5.0\TravelExperts.Repository.genruntimeconfig.cache

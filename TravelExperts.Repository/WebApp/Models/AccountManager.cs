@@ -38,7 +38,7 @@ namespace TravelExpertsWebApp.Models
             TravelExpertsContext context = new TravelExpertsContext();
 
             // Search db for Customer with matching credentials
-            Customers cust = context.Customers.SingleOrDefault(c =>
+            TravelExperts.Repository.Domain.Customer cust = context.Customers.SingleOrDefault(c =>
                 c.UserLogin == login
                 && c.UserPass == pass);
 
