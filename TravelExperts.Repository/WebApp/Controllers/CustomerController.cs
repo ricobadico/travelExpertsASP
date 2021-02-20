@@ -7,22 +7,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApp.Models;
 using TravelExperts.Repository.Domain;
+using TravelExperts.BLL;
 
 
 namespace TravelExpertsWebApp.Controllers
 {
     public class CustomerController : Controller
     {
-        public IActionResult Add()
+        public IActionResult Index()
         {
 
             return View();
         }
 
-        [HttpPost]
+        
         public IActionResult Add(Customers customer)
         {
-
+            CustomerManager.Add(customer);
             return RedirectToAction("Index", "Home");
         }
 
