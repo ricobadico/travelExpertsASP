@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Travel Experts</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://kit.fontawesome.com/65343a6b45.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+        <label for="page-nav-toggle">
+            <svg class="icon--menu-toggle" viewBox="0 0 60 30">
+                <g class="icon-group">
+                    <g class="icon--menu">
+                        <path d="M 6 0 L 54 0" />
+                        <path d="M 6 15 L 54 15" />
+                        <path d="M 6 30 L 54 30" />
+                    </g>
+                    <g class="icon--close">
+                        <path d="M 15 0 L 45 30" />
+                        <path d="M 15 30 L 45 0" />
+                    </g>
+                </g>
+            </svg>
+        </label>
+
+        <nav class="main-navigation">
+            <ul>
+                <li><a class="font-italic" asp-area="" asp-controller="Home" asp-action="Index"><partial name="~/Views/Shared/GreetUser.cshtml" /></a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Travel Experts</a></li>
+                @*If the user is logged in, display the Logout option, otherwise display Login*@
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Edit">Manage Account</a></li>
+                    <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Records">View Bookings</a></li>
+                    <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                }
+                else
+                {
+                    <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                    <li><a asp-area="" asp-controller="Customer" asp-action="Index">Register</a></li>
+                }
+            </ul>
+        </nav>
+        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Travel Experts</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>*@
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+

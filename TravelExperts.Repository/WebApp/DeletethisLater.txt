@@ -1,0 +1,26 @@
+﻿Customer Registration
+
+name, address, city, province, email address, phone number, and business phone
+username and password
+
+Validations that are required:
+-verify that all required fields have been filled-in – business phone is optional
+-check that the postal code has the correct format
+-ensure that the phone number is composed of numeric digits and has an area code
+-ensure that the password has been entered twice and the entries are equal
+
+
+Design a page that will enable a customer to list the travel products they have purchased
+get a price breakdown listing the cost of each product or package, and the total cost owing.
+
+
+-Using Customer Database
+-Using Packages Database or Booking Details
+-Using Bookings Database?
+
+
+
+Optional
+-Page to view their customer rewards?
+
+
