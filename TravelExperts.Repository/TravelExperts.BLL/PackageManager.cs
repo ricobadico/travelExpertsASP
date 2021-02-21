@@ -42,15 +42,18 @@ namespace TravelExperts.BLL
             // This is hard to quantify in the existing data, since no Packages have been ordered..
             // As is, we'll use the Description field for booking details, which typically represents a whole booking
 
-            List<int> previousCustBookings = db.Bookings
+            List<int?> previousCustBookings = db.Bookings
                 .Where(booking => booking.CustomerId != null && booking.CustomerId == custID)
-                .Select(booking => booking.BookingId).ToList(); // taking only the current customer's records
+                .Select(booking => (int?)(booking.BookingId)).ToList(); // taking only the current customer's records. Need to cast as nullable to compare below, since BookingID can be null in bookingdetails
 
-            List<string> previousCustTrips = db.BookingDetails
-                .Where(bookingDetail => bookingDetail.BookingId != null
-                    && previousCustBookings.Contains(Convert.ToInt32(bookingDetail.BookingId)))
-                .Select(detail => detail.Description)
-                .Distinct().ToList();
+            List<string> previousCustTrips = db.BookingDetails // search booking details
+                .Where(bookingDetail => bookingDetail.BookingId != null // bookingid can be null (weirdly), so we want to avoid those
+                    && previousCustBookings.Contains(bookingDetail.BookingId))  // we want bookings details from the book
+                .Select(detail => detail.Description) // just need the descriptions
+                .Distinct().ToList(); // and don't need duplicates
+
+
+
 
             // TODO: Use the list of trips the customer has gone on, find other customers who have gone on them
             // Then return the most popular trips among those
