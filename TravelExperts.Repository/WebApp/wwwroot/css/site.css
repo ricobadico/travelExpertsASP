@@ -1,6 +1,13 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 /* Provide sufficient contrast against white background */
+
+@font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
 a {
   color: #0366d6;
 }
@@ -541,4 +548,131 @@ h1 {
 #redirect:hover {
     color: #eb5757;
     text-decoration: none;
+}
+
+
+/*Title*/
+.headerTitle {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 50px;
+    z-index: 10;
+    margin-top: 10px;
+    margin-left: 11px;
+    position: relative;
+    left: -50%;
+    opacity: 0;
+    color:rgb(208,208,208);
+    text-shadow:3px 3px 3px black;
+
+
+    animation-name: fadeInDelay;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-duration: 2.2s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+
+/*Logo Stylings*/
+.logoImage {
+    width: 70px;
+    height: 70px;
+    display: block;
+    position: relative;
+    left: -50%;
+    margin: 2px auto 0 auto;
+    z-index: 1;
+}
+
+.logoAddonWrap {
+    position: absolute;
+    left:50%;
+    top:0;
+    z-index:1;
+}
+
+.logoAddon1 {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    left: -50%;
+    top: 0;
+    margin-right: 55px;
+    z-index: 2;
+
+    animation-name: slideOutLeft;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.logoAddon2 {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    left: -50%;
+    top: 0;
+    margin-left: 55px;
+    z-index: 2;
+
+    animation-name: slideOutRight;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideOutLeft {
+    0% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes slideOutRight {
+    0% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInDelay {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
 }

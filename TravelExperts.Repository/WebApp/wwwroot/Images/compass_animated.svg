@@ -1,0 +1,13 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="" preserveAspectRatio="xMinYMin meet" class="svg-content">
+
+<defs>
+<linearGradient id="stroke" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:rgb(254,254,254);stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:rgb(163,163,163);stop-opacity:1"></stop>
+</linearGradient>
+</defs>
+
+<path d="m 47 8 c 0 0 -2 2 10 30 c 0 0 -2 2 30 10 c 0 0 -3 -2 -30 10 c 0 0 -2 -2 -10 30 c 0 0 2 -3 -10 -30 c 0 0 2 -2 -30 -10 c 0 0 3 2 30 -10 c 0 0 2 2 10 -30 c 0 0 -2 3 10 30 m -10 -35 a 1 1 0 0 1 0 90 a 1 1 0 0 1 0 -90 m 0 40 l 10 -5 l -10 5 l -10 -5" 
+stroke="url(#stroke)" stroke-width="4" fill="none" class="HZNXJRxU_0"></path>
+
+<style data-made-with="vivus-instant">.HZNXJRxU_0{stroke-dasharray:604 606;stroke-dashoffset:605;animation:HZNXJRxU_draw 2000ms ease-in 0ms forwards;}@keyframes HZNXJRxU_draw{100%{stroke-dashoffset:0;}}@keyframes HZNXJRxU_fade{0%{stroke-opacity:1;}94.44444444444444%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style></svg>
