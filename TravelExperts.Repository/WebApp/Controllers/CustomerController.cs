@@ -103,5 +103,25 @@ namespace TravelExpertsWebApp.Controllers
 
 
 
+        public IActionResult Record()
+        {
+            int custId = Convert.ToInt32(User.Identity.Name);
+            var context = new TravelExpertsContext();
+            var record = PackageManager.GetPackagesByCustId(custId)
+    .Select(b => new BookingModel
+    {
+        BookingId = b.BookingId,
+        BookingDate = b.BookingDate,
+        BookingNo = b.BookingNo,
+        TravelerCount = b.TravelerCount,
+        CustomerId = b.CustomerId,
+        TripType = b.TripType,
+    }).ToList();
+
+            //model given to the view
+            return View(record);
+        }
+
+
     }
 }
