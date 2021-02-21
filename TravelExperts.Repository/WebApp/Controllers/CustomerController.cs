@@ -123,5 +123,15 @@ namespace TravelExpertsWebApp.Controllers
         }
 
 
+
+        public IActionResult RecordTest()
+        {
+            int custId = Convert.ToInt32(User.Identity.Name);
+            TravelExpertsContext context = new TravelExpertsContext();
+
+            List<Bookings> custBookings = PackageManager.GetPackagesByCustId(custId);
+
+            return View(custBookings);
+        }
     }
 }
