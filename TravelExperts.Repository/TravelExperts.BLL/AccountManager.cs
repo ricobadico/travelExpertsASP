@@ -39,7 +39,7 @@ namespace TravelExperts.BLL
         public static CredentialModel Authenticate(string login, string pass)
         {
             // get the hashed version of the password provided
-            //string hashedPass = bcrypt.HashPassword(pass);
+            string hashedPass = bcrypt.HashPassword(pass);
 
 
             // Initialize a user object with null reference
@@ -50,11 +50,31 @@ namespace TravelExperts.BLL
 
             // Search db for Customer with matching credentials
             TravelExperts.Repository.Domain.Customer cust = context.Customers.SingleOrDefault(c =>
-                c.UserLogin == login
-                && c.UserPass == pass);
+                c.UserLogin == login);
+
+            // ***********************************
+            // TODO: REMOVE THIS DEBUGGING CODE
+            if (cust != null && pass == cust.UserPass) //check if there's an unhashed version of the password in db
+            {
+                user = new CredentialModel
+                {
+                    CustId = cust.CustomerId,
+                    Login = cust.UserLogin,
+                    FirstName = cust.CustFirstName
+                };
+
+                return user;
+            }
+            else
+            {
+                return user;
+            }
+            // END CODE TO REMOVE
+            // *************************************
 
             // If a match was found, create a DTO with needed information
-            if (cust != null)
+            if (cust != null // if the login matched in the db
+                && bcrypt.Verify(pass, cust.UserPass)) // and bcrypt confirms the password
             {
                 user = new CredentialModel
                 {
@@ -65,6 +85,14 @@ namespace TravelExperts.BLL
             }
 
             return user; //this will either be null or an object
+        }
+
+        public static string HashPassword(string providedPass)
+        {
+            // get the hashed version of the password provided
+            string hashedPass = bcrypt.HashPassword(providedPass);
+
+            return hashedPass;
         }
     }
 

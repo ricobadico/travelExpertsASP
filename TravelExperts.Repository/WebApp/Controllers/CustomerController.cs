@@ -22,6 +22,8 @@ namespace TravelExpertsWebApp.Controllers
         
         public IActionResult Add(CustomerModel customer)
         {
+            string hashedPass = AccountManager.HashPassword(customer.UserPass);
+
             var cust = new Customer
             {
                 CustAddress = customer.Address,
@@ -35,7 +37,7 @@ namespace TravelExpertsWebApp.Controllers
                 CustPostal = customer.Postal,
                 CustProv = customer.Prov,
                 UserLogin = customer.UserLogin,
-                UserPass = customer.UserPass
+                UserPass = hashedPass
             };
             CustomerManager.Add(cust);
             
