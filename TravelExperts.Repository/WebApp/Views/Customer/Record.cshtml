@@ -1,0 +1,107 @@
+﻿@model IEnumerable<TravelExpertsWebApp.Models.BookingModel>
+
+@{
+    ViewData["Title"] = "Record";
+}
+
+<h1>Record</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TravelerCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TripTypeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PackageId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItineraryNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TripStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TripEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BasePrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TravelerCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TripTypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItineraryNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TripStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TripEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BasePrice)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -23,12 +23,11 @@ namespace TravelExperts.BLL
             //var pack = context.Bookings.Where(a => a.CustomerId ==  id).Include(a => a.Package).ToList();
             //return pack;
 
-
             var pack = context.Bookings
+                .Where(b => b.CustomerId == id)
                 .Include(b=> b.Customer)
                 .Include(b => b.Package)
                 .Include(b => b.BookingDetails)
-                .Where(b => b.Customer.CustomerId == id)
                 .ToList();
             return pack;
         }
