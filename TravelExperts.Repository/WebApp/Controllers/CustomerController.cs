@@ -38,9 +38,14 @@ namespace TravelExpertsWebApp.Controllers
                 UserPass = customer.UserPass
             };
             CustomerManager.Add(cust);
-            return RedirectToAction("Index", "Home");
+            
+            return RedirectToAction("Confirmation");
         }
 
+        public IActionResult Confirmation()
+        {
+            return View();
+        }
 
         public IActionResult Exist(string username)
         {

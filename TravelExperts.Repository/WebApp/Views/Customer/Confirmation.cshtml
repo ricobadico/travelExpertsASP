@@ -1,0 +1,50 @@
+﻿@model TravelExpertsWebApp.Models.CustomerModel
+
+@{
+    ViewData["Title"] = "Registration";
+    Layout = "_Layout";
+}
+
+<!-- MultiStep Form -->
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-3">
+        <div class="col-10 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2><strong>Sign Up Your User Account</strong></h2>
+                <p>Fill all form field to go to next step</p>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li id="account"><strong>Account</strong></li>
+                                <li id="personal"><strong>Personal</strong></li>
+                                <li id="confirm"><strong>Finish</strong></li>
+                            </ul> <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <h5 class="fs-title text-center">You Have Successfully Signed Up !</h5> <br><br>
+                                    <div class="row justify-content-center">
+                                        <a id="redirect" asp-controller="Home" asp-action="Index">
+                                            <h3>Book Your Package Today!</h3>
+                                        </a>
+                                    </div> <br><br>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+<script>
+    $("#progressbar li").addClass("active");
+</script>
+}

@@ -1,4 +1,5 @@
 ﻿@model TravelExpertsWebApp.Models.CustomerModel
+
 @{
     ViewData["Title"] = "Registration";
     Layout = "_Layout";
@@ -13,7 +14,7 @@
                 <p>Fill all form field to go to next step</p>
                 <div class="row">
                     <div class="col-md-12 mx-0">
-                        <form id="msform" asp-action="Add" method="post">
+                        <form id="msform" asp-action="Add">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <!-- progressbar -->
                             <ul id="progressbar">
@@ -21,29 +22,32 @@
                                 <li id="personal"><strong>Personal</strong></li>
                                 <li id="confirm"><strong>Finish</strong></li>
                             </ul> <!-- fieldsets -->
-                            <fieldset>
+                            <fieldset id="account-field">
                                 <div class="form-card">
                                     <h2 class="fs-title">Account Information</h2>
                                     <div class="form-group">
                                         <label asp-for="UserLogin" class="control-label"></label>
-                                        <input id="UserName" asp-for="UserLogin" class="form-control" />
+                                        <input id="username" asp-for="UserLogin" class="form-control" />
                                         <span id="usrNameErrMessage" asp-validation-for="UserLogin" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
                                         <label asp-for="UserPass" class="control-label"></label>
-                                        <input type="password" asp-for="UserPass" class="form-control" />
+                                        <input type="password" asp-for="UserPass" class="form-control" id="password" />
                                         <span asp-validation-for="UserPass" class="text-danger"></span>
                                         <div id="pwd-message">
                                             <strong>Password must contain the following:</strong>
                                             <p id="letter" class="tips">At least one letter</p>
-                                            <p id="capital" class="tips">At least one captail letter</p>
+                                            <p id="capital" class="tips">At least one capital letter</p>
                                             <p id="number" class="tips">At least one number</p>
                                             <p id="length" class="tips">At least 8 characters</p>
                                         </div>
                                     </div>
-                                </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="button" name="next" class="next action-button" value="Next Step" />
+                                </div>
                             </fieldset>
-                            <fieldset>
+                            <fieldset id="info-field">
                                 <div class="form-card">
                                     <h2 class="fs-title">Personal Information</h2>
                                     <div class="row">
@@ -109,22 +113,19 @@
                                     </div>
 
                                 </div>
-                                <input type="button" name="previous" class="btn previous action-button-previous" value="Previous" />
-                                <input type="submit" name="submit" class="btn next action-button" value="Submit" />
+                                <div class="form-group">
+                                    <input type="button" name="previous" class="btn previous action-button-previous" value="Previous" />
+                                    <input type="submit" name="submit" id="submit" class="next action-button" value="Submit" />
+                                </div>
                             </fieldset>
-                            <fieldset>
+                            <fieldset id="finish-field">
                                 <div class="form-card">
-                                    <h2 class="fs-title text-center">Success !</h2> <br><br>
+                                    <h5 class="fs-title text-center">You Have Successfully Signed Up !</h5> <br><br>
                                     <div class="row justify-content-center">
                                         <a id="redirect" asp-controller="Home" asp-action="Index">
-                                            Book Your Package Today!
+                                            <h3>Book Your Package Today!</h3>
                                         </a>
                                     </div> <br><br>
-                                    <div class="row justify-content-center">
-                                        <div class="col-7 text-center">
-                                            <h5>You Have Successfully Signed Up</h5>
-                                        </div>
-                                    </div>
                                 </div>
                             </fieldset>
                         </form>
@@ -136,120 +137,8 @@
 </div>
 
 
+
 @section Scripts{
-    <script type="text/javascript" src="~/js/CustomerRegistration.js">
-        $(document).ready(function () {
-            // validate the password
-            $('input[type=password]').keyup(function () {
-                let pswd = $(this).val();
-
-                // reset the border back to the default while typing
-                $('#pwd').css('border', '1px solid #ced4da');
-
-                //validate at least one letter
-                if (pswd.match(/[A-z]/)) {
-                    $('#letter').removeClass('invalid').addClass('valid');
-                } else {
-                    $('#letter').removeClass('valid').addClass('invalid');
-                }
-
-                //validate at least one capital letter
-                if (pswd.match(/[A-Z]/)) {
-                    $('#capital').removeClass('invalid').addClass('valid');
-                } else {
-                    $('#capital').removeClass('valid').addClass('invalid');
-                }
-
-                //validate at least one number
-                if (pswd.match(/\d/)) {
-                    $('#number').removeClass('invalid').addClass('valid');
-                } else {
-                    $('#number').removeClass('valid').addClass('invalid');
-                }
-
-                //validate the length
-                if (pswd.length < 8) {
-                    $('#length').removeClass('valid').addClass('invalid');
-                } else {
-                    $('#length').removeClass('invalid').addClass('valid');
-                }
-            }); // end of password validation
-
-
-            // validate the username
-            $(".next").click(function () {
-                var name = $("#UserName").val();
-                $.ajax({
-                    method: 'GET',
-                    url: "Customer/Exist",
-                    data: { username: name }
-                }).done(function (resutls) {
-                    var passed = false;
-                    if (resutls == "")
-                        passed = true;
-                    else
-                        $("#usrNameErrMessage").html(resutls);
-
-                    // if it passes username validation
-                    if (passed == true) {
-                        var current_fs, next_fs, previous_fs; //fieldsets
-                        var opacity;
-
-                        current_fs = $(this).parent();
-                        next_fs = $(this).parent().next();
-
-                        //add class Active
-                        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-                        //show the next fieldset
-                        next_fs.show();
-
-                        //hide the current fieldset with style
-                        current_fs.animate({ opacity: 0 }, {
-                            step: function (now) {
-                                // for making fieldset appear animation
-                                opacity = 1 - now;
-
-                                current_fs.css({
-                                    'display': 'none',
-                                    'position': 'relative'
-                                });
-                                next_fs.css({ 'opacity': opacity });
-                            },
-                            duration: 600
-                        });
-                    }
-                }); // end of ajax
-            }); //end of next click
-
-
-            $(".previous").click(function () {
-
-                current_fs = $(this).parent();
-                previous_fs = $(this).parent().prev();
-
-                //Remove class active
-                $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-                //show the previous fieldset
-                previous_fs.show();
-
-                //hide the current fieldset with style
-                current_fs.animate({ opacity: 0 }, {
-                    step: function (now) {
-                        // for making fielset appear animation
-                        opacity = 1 - now;
-
-                        current_fs.css({
-                            'display': 'none',
-                            'position': 'relative'
-                        });
-                        previous_fs.css({ 'opacity': opacity });
-                    },
-                    duration: 600
-                });
-            }); // end of previous click
-        }); // end of document ready
-    </script>
-
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script src="~/js/CustomerRegistration.js"></script>
 }
