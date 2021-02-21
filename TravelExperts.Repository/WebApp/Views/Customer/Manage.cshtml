@@ -6,9 +6,9 @@
 
 <h3>Edit Your Information</h3>
 <hr />
-
+<h4 class="text-danger">@TempData["ErrorMessage"]</h4>
 <div class="container">
-    <form asp-action="Manage">
+    <form asp-action="Manage" id="editForm">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="CustomerId" />
         <h4 class="text-center">Customer Information</h4>
@@ -57,14 +57,14 @@
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="CustHomePhone" class="control-label"></label>
-                <input asp-for="CustHomePhone" class="form-control" />
+                <input asp-for="CustHomePhone" class="form-control" id="homePhone"/>
                 <span asp-validation-for="CustHomePhone" class="text-danger"></span>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="form-group col-md-4">
                 <label asp-for="CustBusPhone" class="control-label"></label>
-                <input asp-for="CustBusPhone" class="form-control" />
+                <input asp-for="CustBusPhone" class="form-control" id="busPhone"/>
                 <span asp-validation-for="CustBusPhone" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
@@ -97,4 +97,3 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-

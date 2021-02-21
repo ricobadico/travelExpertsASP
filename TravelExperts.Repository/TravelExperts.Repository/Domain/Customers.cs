@@ -43,13 +43,18 @@ namespace TravelExperts.Repository.Domain
         public string CustCountry { get; set; }
 
         [Required]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Invalid Phone number")]
         [Display(Name = "Home Phone")]
         public string CustHomePhone { get; set; }
 
         [Display(Name = "Business Phone")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Invalid Phone number")]
         public string CustBusPhone { get; set; }
 
         [Display(Name = "Email")]
+        [EmailAddress]
         public string CustEmail { get; set; }
 
         public int? AgentId { get; set; }

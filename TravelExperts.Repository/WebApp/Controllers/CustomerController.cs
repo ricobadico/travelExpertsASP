@@ -70,18 +70,25 @@ namespace TravelExpertsWebApp.Controllers
         [HttpPost]
         public IActionResult Manage(Customer editedCustomer)
         {
-            try
+            // Calls the validation in the domain (which will catch things the database might not, like phone regex)
+            if (TryValidateModel(editedCustomer))
             {
                 // Attempt to update customer in db
-                CustomerManager.Update(editedCustomer);
+                try
+                {
+                    CustomerManager.Update(editedCustomer);
 
-                return RedirectToAction("Index", "Home"); //TODO: maybe this should go elsewhere
+                    return RedirectToAction("Index", "Home"); //TODO: maybe this should go elsewhere
+                }
+                // If valid inputs but update failed, something's up with the database. A special method gets displayed
+                catch
+                {
+                    TempData["ErrorMessage"] = "Something went wrong when trying to update the database. Please try again later or contact customer service.";
+                    return View();
+                }
             }
-            catch
-            {
-                return View();
-            }
-          
+            // If not valid, returning will show the error messages
+            return View();
         }
 
 
