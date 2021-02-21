@@ -6,48 +6,65 @@
     <title>@ViewData["Title"] - Travel Experts</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Adding google fonts: Josefin Sans-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/65343a6b45.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <p>Company Logo or Travel Experts Slogan?</p>
 
-        @* Icon for Navigation *@
-        <input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
-        <label for="page-nav-toggle">
-            <svg class="icon--menu-toggle" viewBox="0 0 60 30">
-                <g class="icon-group">
-                    <g class="icon--menu">
-                        <path d="M 6 0 L 54 0" />
-                        <path d="M 6 15 L 54 15" />
-                        <path d="M 6 30 L 54 30" />
-                    </g>
-                    <g class="icon--close">
-                        <path d="M 15 0 L 45 30" />
-                        <path d="M 15 30 L 45 0" />
-                    </g>
-                </g>
-            </svg>
-        </label>
+        <!--Logo Stuff-->
+        <div class="logoAddonWrap">
+            <img src="~/Images/compass_animated.svg" class="logoImage" />
+        </div>
+        <div class="logoAddonWrap">
+            <img src="~/Images/cloud-svgrepo-com.svg" class="logoAddon1" />
+        </div>
+        <div class="logoAddonWrap">
+            <img src="~/Images/cloud-svgrepo-com - Copy.png" class="logoAddon2" />
+        </div>
+        <div class="logoAddonWrap">
+            <h1 class="text-center headerTitle">&nbspTravel  &nbsp &nbspExperts</h1>
+        </div>
 
-        <nav class="main-navigation">
-            <ul>
-                <li><a class="font-italic" asp-area="" asp-controller="Home" asp-action="Index"><partial name="~/Views/Shared/GreetUser.cshtml" /></a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Travel Experts</a></li>
-                @*If the user is logged in, display the Logout option, otherwise display Login*@
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Manage">My Account</a></li>
-                    <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Records">View Bookings</a></li>
-                    <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
-                }
-                else
-                {
-                    <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
-                    <li><a asp-area="" asp-controller="Customer" asp-action="Index">Register</a></li>
-                }
-            </ul>
-        </nav>
+
+            @* Icon for Navigation *@
+            <input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+            <label for="page-nav-toggle">
+                <svg class="icon--menu-toggle" viewBox="0 0 60 30">
+                    <g class="icon-group">
+                        <g class="icon--menu">
+                            <path d="M 6 0 L 54 0" />
+                            <path d="M 6 15 L 54 15" />
+                            <path d="M 6 30 L 54 30" />
+                        </g>
+                        <g class="icon--close">
+                            <path d="M 15 0 L 45 30" />
+                            <path d="M 15 30 L 45 0" />
+                        </g>
+                    </g>
+                </svg>
+            </label>
+
+            <nav class="main-navigation">
+                <ul>
+                    <li><a class="font-italic" asp-area="" asp-controller="Home" asp-action="Index"><partial name="~/Views/Shared/GreetUser.cshtml" /></a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Travel Experts</a></li>
+                    @*If the user is logged in, display the Logout option, otherwise display Login*@
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Manage">My Account</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Records">View Bookings</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                        <li><a asp-area="" asp-controller="Customer" asp-action="Index">Register</a></li>
+                    }
+                </ul>
+            </nav>
     </header>
 
     <div class="container">
