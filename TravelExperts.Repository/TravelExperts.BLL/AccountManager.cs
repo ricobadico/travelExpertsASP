@@ -38,9 +38,11 @@ namespace TravelExperts.BLL
         /// <returns>A user data transfer object or null.</returns>
         public static CredentialModel Authenticate(string login, string pass)
         {
-            // get the hashed version of the password provided
-            string hashedPass = bcrypt.HashPassword(pass);
-
+            if(pass != null)
+            {
+                // get the hashed version of the password provided
+                string hashedPass = bcrypt.HashPassword(pass);
+            }
 
             // Initialize a user object with null reference
             CredentialModel user = null;

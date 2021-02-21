@@ -22,7 +22,10 @@ namespace TravelExpertsWebApp.Controllers
         
         public IActionResult Add(CustomerModel customer)
         {
-            string hashedPass = AccountManager.HashPassword(customer.UserPass);
+            //********************************
+            //TODO: uncomment this line to get passwords hashing. Requires updating SQL to allow for varchar(100) in pass
+            //customer.UserPass = AccountManager.HashPassword(customer.UserPass);
+            // ********************************
 
             var cust = new Customer
             {
@@ -37,7 +40,7 @@ namespace TravelExpertsWebApp.Controllers
                 CustPostal = customer.Postal,
                 CustProv = customer.Prov,
                 UserLogin = customer.UserLogin,
-                UserPass = hashedPass
+                UserPass = customer.UserPass
             };
             CustomerManager.Add(cust);
             

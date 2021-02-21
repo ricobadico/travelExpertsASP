@@ -550,16 +550,40 @@ h1 {
     text-decoration: none;
 }
 
+.bg-Main {
+    background: rgb(211,58,44);
+    background: linear-gradient(0deg, rgba(211,58,44,1) 0%, rgba(212,97,86,1) 100%);
+}
+.bg-light-Main {
+    background: rgb(211,58,44);
+    background: linear-gradient(0deg, rgb(254,254,254) 0%, rgb(163,163,163) 100%);
+}
+
+.box-Main {
+    margin-top: 3em;
+    box-shadow: 10px 10px 5px rgba(90, 90, 90, .5);
+}
+
+.box-Main label {
+    color: rgb(208,208,208);
+}
+
+.rounded-nice {
+    border-radius: 15px 15px;
+}
+
+.text-light-Main {
+    color: rgb(208,208,208);
+}
 
 /*Title*/
 .headerTitle {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     z-index: 10;
-    margin-top: 10px;
-    margin-left: 11px;
+    margin-top: 15px;
     position: relative;
-    left: -50%;
+    top:8px;
     opacity: 0;
     color:rgb(208,208,208);
     text-shadow:3px 3px 3px black;

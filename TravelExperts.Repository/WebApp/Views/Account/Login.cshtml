@@ -3,24 +3,29 @@
     ViewData["Title"] = "Login";
 }
 
-<form asp-action="Login">
-    <h3>Login</h3>
+<div class="d-flex flex-column justify-content-center align-items-center ">
+    <div class="box-Main rounded-nice bg-Main col-sm-6 d-flex flex-column justify-content-center align-items-center">
 
-    <table class="table">
-        <tr>
-            <td>Login:</td>
-            <td><input type="text" asp-for="Login" /></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><input type="text" asp-for="Password" /></td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="submit" value="Authenticate" class="btn btn-primary" /></td>
-        </tr>
-    </table>
-    <h4 class="text-danger">@ViewBag.BadLogin</h4>
+        <form asp-action="Login">
 
-</form>
+            <h2 class="text-center text-light-Main" style="margin:1em auto;">Log In To Your Account</h2>
 
+                <table class="table container justify-content-center col-sm-6"  style="padding:1em">
+                    <tr>
+                        <td class="text-light-Main">Login:</td>
+                        <td><input type="text" asp-for="Login" /></td>
+                    </tr>
+                    <tr>
+                        <td class="text-light-Main">Password:</td>
+                        <td><input type="password" asp-for="Password" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center; padding-top:2em;"><input type="submit" value="Log In" class="btn btn-outline-light btn-lg" /></td>
+                    </tr>
+                </table>
+        </form>
+    </div>
+</div>
+<br />
+<h4 class="text-danger text-center">@ViewBag.BadLogin</h4>
 

@@ -4,96 +4,95 @@
     ViewData["Title"] = "Manage";
 }
 
-<h3>Edit Your Information</h3>
-<hr />
+<br/>
+<h2 class="text-center" style="margin:0.5em auto;">Edit Your Information</h2>
 <h4 class="text-danger">@TempData["ErrorMessage"]</h4>
-<div class="container">
+<div class="container box-Main rounded-nice bg-Main" style="padding-top:1em">
     <form asp-action="Manage" id="editForm">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div asp-validation-summary="ModelOnly" class="text-light"></div>
         <input type="hidden" asp-for="CustomerId" />
-        <h4 class="text-center">Customer Information</h4>
+        <h3 class="text-center text-light-Main" style="margin:1em auto;">Customer Info</h3>
         <div class="row d-flex justify-content-center">
             <div class="form-group col-md-4">
                 <label asp-for="CustFirstName" class="control-label"></label>
                 <input asp-for="CustFirstName" class="form-control" />
-                <span asp-validation-for="CustFirstName" class="text-danger"></span>
+                <span asp-validation-for="CustFirstName" class="text-light"></span>
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="CustLastName" class="control-label"></label>
                 <input asp-for="CustLastName" class="form-control" />
-                <span asp-validation-for="CustLastName" class="text-danger"></span>
+                <span asp-validation-for="CustLastName" class="text-light"></span>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="form-group col-md-4">
                 <label asp-for="CustAddress" class="control-label"></label>
                 <input asp-for="CustAddress" class="form-control" />
-                <span asp-validation-for="CustAddress" class="text-danger"></span>
+                <span asp-validation-for="CustAddress" class="text-light"></span>
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="CustCity" class="control-label"></label>
                 <input asp-for="CustCity" class="form-control" />
-                <span asp-validation-for="CustCity" class="text-danger"></span>
+                <span asp-validation-for="CustCity" class="text-light"></span>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="form-group col-md-4">
                 <label asp-for="CustProv" class="control-label"></label>
                 <input asp-for="CustProv" class="form-control" />
-                <span asp-validation-for="CustProv" class="text-danger"></span>
+                <span asp-validation-for="CustProv" class="text-light"></span>
             </div>
 
             <div class="form-group col-md-4">
                 <label asp-for="CustPostal" class="control-label"></label>
                 <input asp-for="CustPostal" class="form-control" />
-                <span asp-validation-for="CustPostal" class="text-danger"></span>
+                <span asp-validation-for="CustPostal" class="text-light"></span>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="form-group col-md-4">
                 <label asp-for="CustCountry" class="control-label"></label>
                 <input asp-for="CustCountry" class="form-control" />
-                <span asp-validation-for="CustCountry" class="text-danger"></span>
+                <span asp-validation-for="CustCountry" class="text-light"></span>
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="CustHomePhone" class="control-label"></label>
                 <input asp-for="CustHomePhone" class="form-control" id="homePhone"/>
-                <span asp-validation-for="CustHomePhone" class="text-danger"></span>
+                <span asp-validation-for="CustHomePhone" class="text-light"></span>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="form-group col-md-4">
                 <label asp-for="CustBusPhone" class="control-label"></label>
                 <input asp-for="CustBusPhone" class="form-control" id="busPhone"/>
-                <span asp-validation-for="CustBusPhone" class="text-danger"></span>
+                <span asp-validation-for="CustBusPhone" class="text-light"></span>
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="CustEmail" class="control-label"></label>
                 <input asp-for="CustEmail" class="form-control" />
-                <span asp-validation-for="CustEmail" class="text-danger"></span>
+                <span asp-validation-for="CustEmail" class="text-light"></span>
             </div>
         </div>
 
-        <h4 class="text-center">Login Information</h4>
+        <h3 class="text-center text-light-Main" style="margin:1em auto;">Login Information</h3>
         <div class="row justify-content-center">
             <div class="form-group col-md-4">
                 <label asp-for="UserLogin" class="control-label"></label>
                 <input asp-for="UserLogin" class="form-control" />
-                <span asp-validation-for="UserLogin" class="text-danger"></span>
+                <span asp-validation-for="UserLogin" class="text-light"></span>
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="UserPass" class="control-label"></label>
-                <input asp-for="UserPass" class="form-control" />
-                <span asp-validation-for="UserPass" class="text-danger"></span>
+                <input type="password" asp-for="UserPass" class="form-control" />
+                <span asp-validation-for="UserPass" class="text-light"></span>
             </div>
         </div>
+        <br/>
         <div class="row justify-content-center">
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-outline-light btn-lg" />
             </div>
         </div>
     </form>
 </div>
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<br/>
