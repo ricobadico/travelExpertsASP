@@ -12,78 +12,84 @@
         TotalPrice += bookings.BasePrice;
     }
     string displayPrice = Convert.ToDecimal(TotalPrice).ToString("c");
-    
+
 }
 
 
 
 <h1>Customer Bookings</h1>
-
-
-@foreach (var booking in Model)
+@if (Model.Count() == 0)
 {
-    <h2>Booking number @Html.DisplayFor(x => booking.BookingId)</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.BookingDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BookingNo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TravelerCount)
-                </th>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.Customer)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Package)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.TripType)
-                    </th>*@
-                <th>
-                    Total Booking Price
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <tr>
-                <td>
-                    @(Html.DisplayFor(modelItem => booking.BookingDateDisplay)) @*Using display string property*@
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => booking.BookingNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => booking.TravelerCount)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => booking.Customer.CustAddress)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => booking.Package.PkgName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => booking.TripType.TripTypeId)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => booking.BasePriceDisplay)
-                </td>
-            </tr>
-        </tbody>
-        <br />
-    </table>
-    <h5>Booking Details  @*@Html.DisplayFor(x => booking.BookingId)*@</h5>
-    @*Full table display for booking details in this partial*@
-    <partial name="~/Views/Shared/BookingDetailsTable.cshtml" model=booking.BookingDetails/>
-    
-    <hr />
-    <br />
+    <div>No Bookings available</div>
 }
-<h3> Total Booking Price: @displayPrice</h3>
+else
+{
+    @foreach (var booking in Model)
+    {
 
+        <h2>Booking number @Html.DisplayFor(x => booking.BookingId)</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BookingDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BookingNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TravelerCount)
+                    </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Customer)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Package)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TripType)
+                        </th>*@
+                    <th>
+                        Total Booking Price
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>
+                        @(Html.DisplayFor(modelItem => booking.BookingDateDisplay)) @*Using display string property*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => booking.BookingNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => booking.TravelerCount)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => booking.Customer.CustAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => booking.Package.PkgName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => booking.TripType.TripTypeId)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => booking.BasePriceDisplay)
+                    </td>
+                </tr>
+            </tbody>
+            <br />
+        </table>
+        <h5>Booking Details  @*@Html.DisplayFor(x => booking.BookingId)*@</h5>
+        @*Full table display for booking details in this partial*@
+        <partial name="~/Views/Shared/BookingDetailsTable.cshtml" model=booking.BookingDetails />
+
+        <hr />
+        <br />
+    }
+    <h3> Total Booking Price: @displayPrice</h3>
+
+}
