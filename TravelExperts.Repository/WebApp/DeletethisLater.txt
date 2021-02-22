@@ -19,8 +19,3 @@ get a price breakdown listing the cost of each product or package, and the total
 -Using Bookings Database?
 
 
-
-Optional
--Page to view their customer rewards?
-
-
