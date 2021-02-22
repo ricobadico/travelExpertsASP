@@ -18,6 +18,17 @@ namespace TravelExperts.Repository.Domain
                 else return null; // otherwise stay null
             } }
         public DateTime? TripEnd { get; set; }
+        [NotMapped]
+        public string TripEndDisplay
+        {
+            get
+            {
+                if (TripEnd != null) //if not null..
+                    return ((DateTime)TripEnd).ToShortDateString(); //.. cast TripStart to DateTime and use ToShortDateString function
+                else return null; // otherwise stay null
+            }
+        }
+
         public string Description { get; set; }
         public string Destination { get; set; }
         public decimal? BasePrice { get; set; }
