@@ -27,6 +27,8 @@ namespace TravelExpertsWebApp.Controllers
             //customer.UserPass = AccountManager.HashPassword(customer.UserPass);
             // ********************************
 
+            customer.HomePhone = CustomerManager.tidyPhoneNumber(customer.HomePhone);
+
             var cust = new Customer
             {
                 CustAddress = customer.Address,
@@ -111,7 +113,7 @@ namespace TravelExpertsWebApp.Controllers
     .Select(b => new BookingModel
     {
         BookingId = b.BookingId,
-        BookingDate = b.BookingDate,
+        BookingDate = b.BookingDate, // cast is safe since if the customer booked it, it has a date
         BookingNo = b.BookingNo,
         TravelerCount = b.TravelerCount,
         CustomerId = b.CustomerId,

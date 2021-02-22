@@ -13,6 +13,13 @@ namespace TravelExpertsWebApp.Models
         public int BookingId { get; set; }
         [Display(Name ="Booking Date")]
         public DateTime? BookingDate { get; set; }
+
+        public string BookingDateDisplay { get {
+                if (BookingDate != null)
+                    return ((DateTime)BookingDate).ToShortDateString();
+                else return null;
+            } }
+
         [Display(Name = "Booking Number")]
         public string BookingNo { get; set; }
         [Display(Name = "Traveler Count")]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TravelExperts.Repository.Domain
 {
@@ -8,6 +9,14 @@ namespace TravelExperts.Repository.Domain
         public int BookingDetailId { get; set; }
         public double? ItineraryNo { get; set; }
         public DateTime? TripStart { get; set; }
+
+        // Display-function not used in the database
+        [NotMapped]
+        public string TripStartDisplay { get {
+                if (TripStart != null) //if not null..
+                    return ((DateTime)TripStart).ToShortDateString(); //.. cast TripStart to DateTime and use ToShortDateString function
+                else return null; // otherwise stay null
+            } }
         public DateTime? TripEnd { get; set; }
         public string Description { get; set; }
         public string Destination { get; set; }

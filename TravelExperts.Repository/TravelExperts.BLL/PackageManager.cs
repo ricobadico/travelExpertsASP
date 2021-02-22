@@ -52,7 +52,7 @@ namespace TravelExperts.BLL
                 .Select(detail => detail.Description) // just need the descriptions
                 .Distinct().ToList(); // and don't need duplicates
 
-
+            //List<BookingDetails> 
 
 
             // TODO: Use the list of trips the customer has gone on, find other customers who have gone on them
