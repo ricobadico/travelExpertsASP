@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using TravelExperts.Repository.Domain;
@@ -49,7 +50,17 @@ namespace TravelExpertsWebApp.Models
                 }
                 return sum;
             } set { BasePrice = value; } }
-    
+        [NotMapped]
+        public string BasePriceDisplay
+        {
+            get
+            {
+                if (BasePrice != null) //if not null..
+                    return ((Decimal)BasePrice).ToString("c"); //.. cast TripStart to DateTime and use ToShortDateString function
+                else return null; // otherwise stay null
+            }
+        }
+
 
         public virtual Customer Customer { get; set; }
         public virtual Packages Package { get; set; }
