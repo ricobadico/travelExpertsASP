@@ -27,6 +27,8 @@ namespace TravelExpertsWebApp.Controllers
             //customer.UserPass = AccountManager.HashPassword(customer.UserPass);
             // ********************************
 
+            customer.HomePhone = CustomerManager.tidyPhoneNumber(customer.HomePhone);
+
             var cust = new Customer
             {
                 CustAddress = customer.Address,

@@ -71,8 +71,10 @@ namespace TravelExperts.BLL
             // Strip any spaces and special characters from the input
             string tidiedPN = phoneInput.Trim(new Char[] { ' ', '-', '.', '(', ')' });
 
-            //string formattedPN = $"({tidiedPN.Substring()}"
-            return tidiedPN;
+            // Put it in a nice, readable format
+            string formattedPN = $"({tidiedPN.Substring(0,3)}) {tidiedPN.Substring(4, 3)}-{tidiedPN.Substring(7, 3)}";
+
+            return formattedPN;
         }
     }
 }
