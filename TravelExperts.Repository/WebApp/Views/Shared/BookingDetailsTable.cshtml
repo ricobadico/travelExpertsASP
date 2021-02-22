@@ -1,0 +1,92 @@
+﻿@model IEnumerable<TravelExperts.Repository.Domain.BookingDetails>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Itinerary Number
+            </th>
+            <th>
+                Trip Start Date
+            </th>
+            <th>
+                Trip End Date
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Destination
+            </th>
+            <th>
+                Base Price
+            </th>
+            @*<th>
+                    AgencyCommission
+                </th>*@
+            @*<th>
+                    Booking
+                </th>*@
+            @*<th>
+                    Class
+                </th>*@
+            <th>
+                Fee
+            </th>
+            @*<th>
+                    ProductSupplier
+                </th>
+                <th>
+                    Region
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var bookingDetail in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => bookingDetail.ItineraryNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => bookingDetail.TripStartDisplay) @*Using display string property*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => bookingDetail.TripEndDisplay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => bookingDetail.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => bookingDetail.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => bookingDetail.BasePriceDisplay)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => bookingDetail.AgencyCommission)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => bookingDetail.Booking.BookingId)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => bookingDetail.Class.ClassId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => bookingDetail.Fee.FeeAmtDisplay)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => bookingDetail.ProductSupplier.ProductSupplierId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => bookingDetail.Region.RegionName)
+                    </td>*@
+            </tr>
+
+
+
+        }
+    </tbody>
+</table>
