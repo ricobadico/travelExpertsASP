@@ -42,6 +42,7 @@ namespace TravelExpertsWebApp.Models
                 }
                 return sum;
             } set { BasePrice = value; } }
+    
 
         public virtual Customer Customer { get; set; }
         public virtual Packages Package { get; set; }

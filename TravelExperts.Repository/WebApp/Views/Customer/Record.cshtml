@@ -4,6 +4,18 @@
 @{
     ViewData["Title"] = "RecordTest";
 }
+@{
+    Decimal? TotalPrice = 0;
+
+    @foreach (var bookings in Model)
+    {
+        TotalPrice += bookings.BasePrice;
+    }
+    string displayPrice = Convert.ToDecimal(TotalPrice).ToString("c");
+    
+}
+
+
 
 <h1>Customer Bookings</h1>
 
@@ -24,14 +36,14 @@
                     @Html.DisplayNameFor(model => model.TravelerCount)
                 </th>
                 @*<th>
-                    @Html.DisplayNameFor(model => model.Customer)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Package)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TripType)
-                </th>*@
+                        @Html.DisplayNameFor(model => model.Customer)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Package)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TripType)
+                    </th>*@
                 <th>
                     Total Booking Price
                 </th>
@@ -51,21 +63,22 @@
                     @Html.DisplayFor(modelItem => booking.TravelerCount)
                 </td>
                 @*<td>
-                    @Html.DisplayFor(modelItem => booking.Customer.CustAddress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => booking.Package.PkgName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => booking.TripType.TripTypeId)
-                </td>*@
+                        @Html.DisplayFor(modelItem => booking.Customer.CustAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => booking.Package.PkgName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => booking.TripType.TripTypeId)
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => booking.BasePrice)
                 </td>
             </tr>
         </tbody>
+        <br />
     </table>
-    <h2>Booking Details for booking number @Html.DisplayFor(x => booking.BookingId)</h2>
+    <h3>Booking Details  @*@Html.DisplayFor(x => booking.BookingId)*@</h3>
     <table class="table">
         <thead>
             <tr>
@@ -88,23 +101,23 @@
                     Base Price
                 </th>
                 @*<th>
-                    AgencyCommission
-                </th>*@
+                        AgencyCommission
+                    </th>*@
                 @*<th>
-                    Booking
-                </th>*@
+                        Booking
+                    </th>*@
                 @*<th>
-                    Class
-                </th>*@
+                        Class
+                    </th>*@
                 <th>
                     Fee
                 </th>
                 @*<th>
-                    ProductSupplier
-                </th>
-                <th>
-                    Region
-                </th>*@
+                        ProductSupplier
+                    </th>
+                    <th>
+                        Region
+                    </th>*@
                 <th></th>
             </tr>
         </thead>
@@ -132,28 +145,33 @@
                         @Html.DisplayFor(modelItem => bookingDetail.BasePrice)
                     </td>
                     @*<td>
-                        @Html.DisplayFor(modelItem => bookingDetail.AgencyCommission)
-                    </td>*@
+                            @Html.DisplayFor(modelItem => bookingDetail.AgencyCommission)
+                        </td>*@
                     @*<td>
-                        @Html.DisplayFor(modelItem => bookingDetail.Booking.BookingId)
-                    </td>*@
+                            @Html.DisplayFor(modelItem => bookingDetail.Booking.BookingId)
+                        </td>*@
                     @*<td>
-                        @Html.DisplayFor(modelItem => bookingDetail.Class.ClassId)
-                    </td>*@
+                            @Html.DisplayFor(modelItem => bookingDetail.Class.ClassId)
+                        </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => bookingDetail.Fee.FeeAmt)
                     </td>
                     @*<td>
-                        @Html.DisplayFor(modelItem => bookingDetail.ProductSupplier.ProductSupplierId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => bookingDetail.Region.RegionName)
-                    </td>*@
+                            @Html.DisplayFor(modelItem => bookingDetail.ProductSupplier.ProductSupplierId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => bookingDetail.Region.RegionName)
+                        </td>*@
                 </tr>
+
+               
+
             }
         </tbody>
     </table>
+    
     <hr />
     <br />
 }
+<h3> Total Booking Price: @displayPrice</h3>
 
