@@ -103,6 +103,47 @@ namespace TravelExpertsWebApp.Controllers
             return View();
         }
 
+        public IActionResult ManageUser()
+        {
+            // Get customer ID from user indentity (since this is an authorized action, this is safe)
+            int custID = Convert.ToInt32(User.Identity.Name);
+
+            Customer customer = CustomerManager.FindById(custID);
+
+            return View();
+
+        }
+        // Post overload that takes the submitted changes to their customer data and saves them to the database
+        [Authorize]
+        [HttpPost]
+        public IActionResult ManageUser(Customer newLoginDetails)
+        {
+            int custID = Convert.ToInt32(User.Identity.Name);
+            Customer custDBRecord = CustomerManager.FindById(custID);
+            custDBRecord.UserLogin = newLoginDetails.UserLogin;
+            custDBRecord.UserPass = newLoginDetails.UserPass;
+
+
+            // Calls the validation in the domain (which will catch things the database might not, like phone regex)
+            if (TryValidateModel(custDBRecord))
+            {
+                // Attempt to update customer in db
+                try
+                {
+                    CustomerManager.Update(custDBRecord);
+
+                    return RedirectToAction("Index", "Home"); //TODO: maybe this should go elsewhere
+                }
+                // If valid inputs but update failed, something's up with the database. A special method gets displayed
+                catch
+                {
+                    TempData["ErrorMessage"] = "Something went wrong when trying to update the database. Please try again later or contact customer service.";
+                    return View();
+                }
+            }
+            // If not valid, returning will show the error messages
+            return View();
+        }
 
 
         public IActionResult Record()

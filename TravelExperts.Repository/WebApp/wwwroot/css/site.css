@@ -22,6 +22,7 @@ header {
     white-space: nowrap;
     background-image: linear-gradient(to bottom, #516d7e, #75a4a0 50%, #516d7e);
     vertical-align: central;
+    box-shadow: 0 2px 4px -2px rgba(0,0,0,0.25);
 }
 
 

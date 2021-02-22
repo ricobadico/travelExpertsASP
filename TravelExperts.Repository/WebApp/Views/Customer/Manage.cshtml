@@ -57,14 +57,14 @@
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="CustHomePhone" class="control-label"></label>
-                <input asp-for="CustHomePhone" class="form-control" id="homePhone"/>
+                <input asp-for="CustHomePhone" class="form-control" id="homePhone" />
                 <span asp-validation-for="CustHomePhone" class="text-light"></span>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="form-group col-md-4">
                 <label asp-for="CustBusPhone" class="control-label"></label>
-                <input asp-for="CustBusPhone" class="form-control" id="busPhone"/>
+                <input asp-for="CustBusPhone" class="form-control" id="busPhone" />
                 <span asp-validation-for="CustBusPhone" class="text-light"></span>
             </div>
             <div class="form-group col-md-4">
@@ -73,8 +73,9 @@
                 <span asp-validation-for="CustEmail" class="text-light"></span>
             </div>
         </div>
-
-        <h3 class="text-center text-light-Main" style="margin:1em auto;">Login Information</h3>
+        <input  type="hidden" asp-for="UserLogin" class="form-control" />
+        <input type="hidden" asp-for="UserPass" class="form-control" />
+        @*<h3 class="text-center text-light-Main" style="margin:1em auto;">Login Information</h3>
         <div class="row justify-content-center">
             <div class="form-group col-md-4">
                 <label asp-for="UserLogin" class="control-label"></label>
@@ -86,8 +87,8 @@
                 <input type="password" asp-for="UserPass" class="form-control" />
                 <span asp-validation-for="UserPass" class="text-light"></span>
             </div>
-        </div>
-        <br/>
+        </div>*@
+        <br />
         <div class="row justify-content-center">
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-outline-light btn-lg" />
