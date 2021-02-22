@@ -70,11 +70,17 @@ namespace TravelExperts.BLL
         {
             // Strip any spaces and special characters from the input
             string tidiedPN = new string(phoneInput.Where(char.IsDigit).ToArray());
-
-            // Put it in a nice, readable format
-            string formattedPN = $"({tidiedPN.Substring(0,3)}) {tidiedPN.Substring(3, 3)}-{tidiedPN.Substring(6, 4)}";
-
-            return formattedPN;
+            if (tidiedPN.Length == 10)
+            {
+                // Put it in a nice, readable format
+                tidiedPN = $"({tidiedPN.Substring(0, 3)}) {tidiedPN.Substring(3, 3)}-{tidiedPN.Substring(6, 4)}";
+            }
+            else if(tidiedPN.Length == 11)
+            {
+                tidiedPN = $"{tidiedPN.Substring(0, 1)}({tidiedPN.Substring(1, 3)}) {tidiedPN.Substring(4, 3)}-{tidiedPN.Substring(7, 4)}";
+            }
+            
+            return tidiedPN;
         }
     }
 }

@@ -42,7 +42,10 @@ namespace TravelExpertsWebApp.Controllers
             };
 
             cust.CustHomePhone = CustomerManager.tidyPhoneNumber(customer.HomePhone);
-            cust.CustBusPhone = CustomerManager.tidyPhoneNumber(customer.BusPhone);
+            if (customer.BusPhone != null && customer.BusPhone != String.Empty)
+            {
+                cust.CustBusPhone = CustomerManager.tidyPhoneNumber(customer.BusPhone);
+            }
 
             CustomerManager.Add(cust);
             
@@ -162,7 +165,6 @@ namespace TravelExpertsWebApp.Controllers
         BookingDetails = b.BookingDetails
        
     }).ToList();
-            decimal? test = record[0].BasePrice;
 
             //model given to the view
             return View(record);

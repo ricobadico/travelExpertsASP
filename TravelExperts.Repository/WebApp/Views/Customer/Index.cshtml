@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label required">Confirm Password</label>
-                                        <input type="password" id="pwd-confirm" class="form-control col-6" name="confirmPwd" />
+                                        <input type="password" id="pwd-confirm" class="form-control required" name="confirmPwd" />
                                         <span class="text-danger field-validation-valid" data-valmsg-for="confirmPwd" data-valmsg-replace="true" id="confirmPwdErrMessage"></span>
                                     </div>
                                 </div>
@@ -107,12 +107,12 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label asp-for="HomePhone" class="control-label required"></label>
-                                            <input asp-for="HomePhone" class="form-control" placeholder="(999)-999-9999" />
+                                            <input asp-for="HomePhone" class="form-control" placeholder="1(999)-999-9999" />
                                             <span asp-validation-for="HomePhone" class="text-danger"></span>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label asp-for="BusPhone" class="control-label"></label>
-                                            <input asp-for="BusPhone" class="form-control" placeholder="(999)-999-9999"/>
+                                            <input asp-for="BusPhone" class="form-control" placeholder="1(999)-999-9999"/>
                                             <span asp-validation-for="BusPhone" class="text-danger"></span>
                                         </div>
                                     </div>
