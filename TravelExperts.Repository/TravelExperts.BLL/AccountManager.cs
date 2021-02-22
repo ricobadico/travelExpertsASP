@@ -18,10 +18,6 @@ namespace TravelExperts.BLL
         public string Password { get; set; }
         public string FirstName { get; set; }
 
-        public static object Authenticate(string login, string password)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     /// <summary>
@@ -38,12 +34,6 @@ namespace TravelExperts.BLL
         /// <returns>A user data transfer object or null.</returns>
         public static CredentialModel Authenticate(string login, string pass)
         {
-            if(pass != null)
-            {
-                // get the hashed version of the password provided
-                string hashedPass = bcrypt.HashPassword(pass);
-            }
-
             // Initialize a user object with null reference
             CredentialModel user = null;
 
@@ -53,26 +43,6 @@ namespace TravelExperts.BLL
             // Search db for Customer with matching credentials
             TravelExperts.Repository.Domain.Customer cust = context.Customers.SingleOrDefault(c =>
                 c.UserLogin == login);
-
-            // ***********************************
-            // TODO: REMOVE THIS DEBUGGING CODE
-            if (cust != null && pass == cust.UserPass) //check if there's an unhashed version of the password in db
-            {
-                user = new CredentialModel
-                {
-                    CustId = cust.CustomerId,
-                    Login = cust.UserLogin,
-                    FirstName = cust.CustFirstName
-                };
-
-                return user;
-            }
-            else
-            {
-                return user;
-            }
-            // END CODE TO REMOVE
-            // *************************************
 
             // If a match was found, create a DTO with needed information
             if (cust != null // if the login matched in the db

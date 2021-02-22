@@ -22,10 +22,8 @@ namespace TravelExpertsWebApp.Controllers
         
         public IActionResult Add(CustomerModel customer)
         {
-            //********************************
-            //TODO: uncomment this line to get passwords hashing. Requires updating SQL to allow for varchar(100) in pass
-            //customer.UserPass = AccountManager.HashPassword(customer.UserPass);
-            // ********************************
+            // Hashes password for secure storage in the database
+            customer.UserPass = AccountManager.HashPassword(customer.UserPass);
 
             var cust = new Customer
             {

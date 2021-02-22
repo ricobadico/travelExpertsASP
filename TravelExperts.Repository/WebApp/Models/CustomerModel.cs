@@ -29,7 +29,7 @@ namespace TravelExpertsWebApp.Models
         public string Prov { get; set; }
 
         [Required]
-        [RegularExpression(@"^(?!.*[DFIOQU])[A-VXY][0-9][A-Z][ -] ?[0-9][A-Z][0-9]$", ErrorMessage = "Invalid Postal Code Format")]
+        [RegularExpression(@"^(?!.*[DFIOQU])[A-VXY][0-9][A-Z][- ]?[0-9][A-Z][0-9]$", ErrorMessage = "Invalid Postal Code Format")]
         [Display(Name = "Postal Code")]
         public string Postal { get; set; }
 
@@ -54,7 +54,7 @@ namespace TravelExpertsWebApp.Models
 
         [Required]
         [Display(Name ="Password")]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$", ErrorMessage ="Invalid Password Format")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$", ErrorMessage ="Invalid Password Format")]
         public string UserPass { get; set; }
     }
 }
