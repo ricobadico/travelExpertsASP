@@ -32,6 +32,16 @@ namespace TravelExperts.Repository.Domain
         public string Description { get; set; }
         public string Destination { get; set; }
         public decimal? BasePrice { get; set; }
+        [NotMapped]
+        public string BasePriceDisplay
+        {
+            get
+            {
+                if (BasePrice != null) //if not null..
+                    return ((Decimal)BasePrice).ToString("c"); //.. cast TripStart to DateTime and use ToShortDateString function
+                else return null; // otherwise stay null
+            }
+        }
         public decimal? AgencyCommission { get; set; }
         public int? BookingId { get; set; }
         public string RegionId { get; set; }

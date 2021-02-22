@@ -72,7 +72,7 @@
                         @Html.DisplayFor(modelItem => booking.TripType.TripTypeId)
                     </td>*@
                 <td>
-                    @Html.DisplayFor(modelItem => booking.BasePrice)
+                    @Html.DisplayFor(modelItem => booking.BasePriceDisplay)
                 </td>
             </tr>
         </tbody>
@@ -142,7 +142,7 @@
                         @Html.DisplayFor(modelItem => bookingDetail.Destination)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => bookingDetail.BasePrice)
+                        @Html.DisplayFor(modelItem => bookingDetail.BasePriceDisplay)
                     </td>
                     @*<td>
                             @Html.DisplayFor(modelItem => bookingDetail.AgencyCommission)
@@ -154,7 +154,7 @@
                             @Html.DisplayFor(modelItem => bookingDetail.Class.ClassId)
                         </td>*@
                     <td>
-                        @Html.DisplayFor(modelItem => bookingDetail.Fee.FeeAmt)
+                        @Html.DisplayFor(modelItem => bookingDetail.Fee.FeeAmtDisplay)
                     </td>
                     @*<td>
                             @Html.DisplayFor(modelItem => bookingDetail.ProductSupplier.ProductSupplierId)
