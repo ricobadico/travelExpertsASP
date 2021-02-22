@@ -31,7 +31,7 @@ namespace TravelExpertsWebApp.Controllers
             var usr = AccountManager.Authenticate(loginAttempt.Login, loginAttempt.Password);
 
             // TODO: delete this debugging code
-            //var test = PackageManager.GetRecommendations(143);
+            var test = PackageManager.GetRecommendations(143);
 
             // If no match, return to the Login page
             if (usr == null)
