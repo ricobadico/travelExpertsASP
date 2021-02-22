@@ -113,7 +113,7 @@ namespace TravelExpertsWebApp.Controllers
     .Select(b => new BookingModel
     {
         BookingId = b.BookingId,
-        BookingDate = b.BookingDate,
+        BookingDate = (DateTime)b.BookingDate, // cast is safe since if the customer booked it, it has a date
         BookingNo = b.BookingNo,
         TravelerCount = b.TravelerCount,
         CustomerId = b.CustomerId,

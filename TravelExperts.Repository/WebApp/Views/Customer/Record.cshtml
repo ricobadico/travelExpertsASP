@@ -42,7 +42,7 @@
 
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => booking.BookingDate)
+                    @(Html.DisplayFor(modelItem => booking.BookingDateDisplay)) @*Using display string property*@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => booking.BookingNo)
@@ -117,7 +117,7 @@
                         @Html.DisplayFor(modelItem => bookingDetail.ItineraryNo)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => bookingDetail.TripStart)
+                        @Html.DisplayFor(modelItem => bookingDetail.TripStartDisplay) @*Using display string property*@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => bookingDetail.TripEnd)
