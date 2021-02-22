@@ -17,19 +17,19 @@ for details on configuring this project to bundle and minify static web assets. 
 header {
     position: absolute;
     top: 0px;
-    height: 70px;
+    height: 85px;
     width: 100%;
     white-space: nowrap;
-    background-color: #516d7e;
+    background-image: linear-gradient(to bottom, #516d7e, #75a4a0 50%, #516d7e);
     vertical-align: central;
 }
 
 
 body {
     /* Margin to account for header/footer heights */
-    margin-top: 70px;
-    margin-bottom: 150px;
-    background-image: url("../Images/guilloche-1520731_1280.png");
+    margin-top: 90px;
+    margin-bottom: 180px;
+    background-image: url("../Images/passport-bg.png");
 }
 
 
@@ -70,22 +70,23 @@ html {
     bottom: 0;
     width: 100%;
     white-space: nowrap;
-    background-color: #516d7e;
+    background-image: linear-gradient(to bottom, #75a4a0, #516d7e 47%, #31536f);
     color: aliceblue;
     justify-content: center;
+    padding-top: 1rem;
 }
 
 #links > a, ul, li {
     list-style-type: none;
     color: beige;
     align-items: center;
+    padding: 0px;
 }
 #links a {
     color: #F0F7EE;
 }
-    #links a:hover
-    {
-        color: grey;
+    #links a:hover {
+        color: #ddd1bd;
         text-decoration: none;
     }
 
@@ -160,7 +161,7 @@ h1 {
 }
 
 .icon--menu {
-    stroke: var(--color-primary);
+    stroke: rgb(208,208,208);
 }
 
 .icon--close {
@@ -332,8 +333,16 @@ h1 {
 
 #grad1 {
     margin-top: 5rem;
-    background-image: linear-gradient(141deg, hsla(0, 78.72%, 63.14%, 1.00), hsla(0, 78.72%, 63.14%, 1.00) 28%, hsla(0, 0.00%, 13.33%, 1.00));
+    background-image: linear-gradient(to bottom, #75a4a0, #75a4a0 0%, #31536f);
     min-width: 600px;
+    border-radius: 25px;
+}
+
+.required:after {
+    content: " *";
+    font-weight: bold;
+    color: red;
+    padding-right: 2px;
 }
 
 #msform {
@@ -394,7 +403,7 @@ h1 {
         box-shadow: none !important;
         border: none;
         font-weight: bold;
-        border-bottom: 2px solid #eb5757;
+        border-bottom: 2px solid #75a4a0;
         outline-width: 0;
     }
 
@@ -412,12 +421,12 @@ h1 {
 
     #msform .action-button:hover,
     #msform .action-button:focus {
-        box-shadow: 0 0 0 2px white, 0 0 0 3px #eb5757
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #75a4a0
     }
 
     #msform .action-button-previous {
         width: 150px;
-        background: #eb5757;
+        background: #75a4a0;
         font-weight: bold;
         color: white;
         border: 0 none;
@@ -490,6 +499,7 @@ h1 {
     font-size: 12px;
     width: 30%;
     float: left;
+    color: black;
     position: relative;
 }
 
@@ -534,7 +544,7 @@ h1 {
 
     #progressbar li.active:before,
     #progressbar li.active:after {
-        background: #eb5757;
+        background: #75a4a0;
     }
 
 .fit-image {
@@ -559,18 +569,18 @@ h1 {
 }
 
 #redirect:hover {
-    color: #eb5757;
+    color: #75a4a0;
     text-decoration: none;
 }
 
 .bg-Main {
-    background: rgb(211,58,44);
-    background: linear-gradient(0deg, rgba(211,58,44,1) 0%, rgba(212,97,86,1) 100%);
+    background: linear-gradient(to bottom, #75a4a0, #75a4a0 0%, #31536f);
 }
 .bg-light-Main {
     background: rgb(211,58,44);
     background: linear-gradient(0deg, rgb(254,254,254) 0%, rgb(163,163,163) 100%);
 }
+
 
 .box-Main {
     margin-top: 3em;
@@ -625,7 +635,7 @@ h1 {
 .logoAddonWrap {
     position: absolute;
     left:50%;
-    top:0;
+    top:0.5rem;
     z-index:1;
 }
 
@@ -634,7 +644,6 @@ h1 {
     width: 70px;
     height: 70px;
     left: -50%;
-    top: 0;
     margin-right: 55px;
     z-index: 2;
 
