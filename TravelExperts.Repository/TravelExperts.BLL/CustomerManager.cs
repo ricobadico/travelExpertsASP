@@ -65,5 +65,14 @@ namespace TravelExperts.BLL
             // Update DB
             db.SaveChanges();
         }
+
+        public static string tidyPhoneNumber(string phoneInput)
+        {
+            // Strip any spaces and special characters from the input
+            string tidiedPN = phoneInput.Trim(new Char[] { ' ', '-', '.', '(', ')' });
+
+            //string formattedPN = $"({tidiedPN.Substring()}"
+            return tidiedPN;
+        }
     }
 }
