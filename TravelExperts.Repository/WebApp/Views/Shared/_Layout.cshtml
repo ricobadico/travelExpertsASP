@@ -77,9 +77,49 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
-            &copy; 2021 - Group6 Productions
+            <div class="row">
+                <div class="col-md-4">
+                    Calgary Office<br />
+                    <address>
+                        1155 8th Ave SW,<br />
+                        Calgary, AB, T2P1N3<br />
+                        Phone (403) 271-9873<br />
+                        Fax (4030 271-9872
+                    </address>
+                </div>
+                <div class="col-md-4">
+                    Okotoks Office<br />
+                    <address>
+                        110 Main Street,<br />
+                        Okotoks, AB, T7R3J5<br />
+                        Phone (403) 563-2381<br />
+                        Fax (403) 563-2382
+                    </address>
+                </div>
+                <div class="col-md-4" id="links">
+                    Quick Links
+                    <ul>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        @*If the user is logged in, display the Logout option, otherwise display Login*@
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Manage">My Account</a></li>
+                            <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Record">View Bookings</a></li>
+                            <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                            <li><a asp-area="" asp-controller="Customer" asp-action="Index">Register</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div id="row footer" class="col-12">
+                &copy; 2021 - Group6 Productions
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

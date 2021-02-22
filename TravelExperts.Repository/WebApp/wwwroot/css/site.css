@@ -8,10 +8,6 @@ for details on configuring this project to bundle and minify static web assets. 
     src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 
-a {
-  color: #0366d6;
-}
-
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -32,16 +28,14 @@ header {
 body {
     /* Margin to account for header/footer heights */
     margin-top: 70px;
-    margin-bottom: 60px;
+    margin-bottom: 150px;
     background-color: #dee2dd;
 }
 
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
-  font-size: 12px;
-}
+
 @media (min-width: 768px) {
   html {
     font-size: 14px;
@@ -64,7 +58,7 @@ button.accept-policy {
   line-height: inherit;
 }
 
-/* Sticky footer styles
+/* Footer styles
 -------------------------------------------------- */
 html {
   position: relative;
@@ -76,9 +70,28 @@ html {
     bottom: 0;
     width: 100%;
     white-space: nowrap;
-    line-height: 60px; /* Vertically center the text there */
     background-color: #516d7e;
     color: aliceblue;
+    justify-content: center;
+}
+
+#links > a, ul, li {
+    list-style-type: none;
+    color: beige;
+    align-items: center;
+}
+#links a {
+    color: #F0F7EE;
+}
+    #links a:hover
+    {
+        color: grey;
+        text-decoration: none;
+    }
+
+address
+{
+    font-size: small;
 }
 
 /*Navigation*/
@@ -181,7 +194,7 @@ h1 {
     }
 
     .main-navigation ul {
-        font-size: 12vmin;
+        font-size: 10vmin;
         font-family: var(--font-heading);
         width: 100%;
     }

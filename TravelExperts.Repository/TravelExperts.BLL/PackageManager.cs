@@ -28,6 +28,7 @@ namespace TravelExperts.BLL
                 .Include(b=> b.Customer)
                 .Include(b => b.Package)
                 .Include(b => b.BookingDetails)
+                .ThenInclude(bd => bd.Fee)
                 .ToList();
             return pack;
         }

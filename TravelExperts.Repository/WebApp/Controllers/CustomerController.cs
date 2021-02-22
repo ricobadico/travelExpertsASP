@@ -116,7 +116,10 @@ namespace TravelExpertsWebApp.Controllers
         TravelerCount = b.TravelerCount,
         CustomerId = b.CustomerId,
         TripType = b.TripType,
+        BookingDetails = b.BookingDetails
+       
     }).ToList();
+            decimal? test = record[0].BasePrice;
 
             //model given to the view
             return View(record);
