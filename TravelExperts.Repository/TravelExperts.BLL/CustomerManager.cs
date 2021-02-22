@@ -69,10 +69,10 @@ namespace TravelExperts.BLL
         public static string tidyPhoneNumber(string phoneInput)
         {
             // Strip any spaces and special characters from the input
-            string tidiedPN = phoneInput.Trim(new Char[] { ' ', '-', '.', '(', ')' });
+            string tidiedPN = new string(phoneInput.Where(char.IsDigit).ToArray());
 
             // Put it in a nice, readable format
-            string formattedPN = $"({tidiedPN.Substring(0,3)}) {tidiedPN.Substring(4, 3)}-{tidiedPN.Substring(7, 3)}";
+            string formattedPN = $"({tidiedPN.Substring(0,3)}) {tidiedPN.Substring(3, 3)}-{tidiedPN.Substring(6, 4)}";
 
             return formattedPN;
         }

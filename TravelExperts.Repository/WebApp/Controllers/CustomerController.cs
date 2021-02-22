@@ -27,13 +27,9 @@ namespace TravelExpertsWebApp.Controllers
             //customer.UserPass = AccountManager.HashPassword(customer.UserPass);
             // ********************************
 
-            customer.HomePhone = CustomerManager.tidyPhoneNumber(customer.HomePhone);
-
             var cust = new Customer
             {
                 CustAddress = customer.Address,
-                CustHomePhone = customer.HomePhone,
-                CustBusPhone = customer.BusPhone,
                 CustFirstName = customer.FirstName,
                 CustLastName = customer.LastName,
                 CustCity = customer.City,
@@ -44,6 +40,10 @@ namespace TravelExpertsWebApp.Controllers
                 UserLogin = customer.UserLogin,
                 UserPass = customer.UserPass
             };
+
+            cust.CustHomePhone = CustomerManager.tidyPhoneNumber(customer.HomePhone);
+            cust.CustBusPhone = CustomerManager.tidyPhoneNumber(customer.BusPhone);
+
             CustomerManager.Add(cust);
             
             return RedirectToAction("Confirmation");
