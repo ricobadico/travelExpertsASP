@@ -9,6 +9,7 @@ namespace TravelExperts.Repository.Domain
         public int BookingDetailId { get; set; }
         public double? ItineraryNo { get; set; }
         public DateTime? TripStart { get; set; }
+
         // Display-function not used in the database
         [NotMapped]
         public string TripStartDisplay { get {
