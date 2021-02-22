@@ -26,21 +26,26 @@
                                 <div class="form-card">
                                     <h2 class="fs-title">Account Information</h2>
                                     <div class="form-group">
-                                        <label asp-for="UserLogin" class="control-label"></label>
+                                        <label asp-for="UserLogin" class="control-label required"></label>
                                         <input id="username" asp-for="UserLogin" class="form-control" />
                                         <span id="usrNameErrMessage" asp-validation-for="UserLogin" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label asp-for="UserPass" class="control-label"></label>
+                                        <label asp-for="UserPass" class="control-label required"></label>
                                         <input type="password" asp-for="UserPass" class="form-control" id="password" />
                                         <span asp-validation-for="UserPass" class="text-danger"></span>
                                         <div id="pwd-message">
                                             <strong>Password must contain the following:</strong>
-                                            <p id="letter" class="tips">At least one letter</p>
+                                            <p id="letter" class="tips">At least one lowercase letter</p>
                                             <p id="capital" class="tips">At least one capital letter</p>
                                             <p id="number" class="tips">At least one number</p>
                                             <p id="length" class="tips">At least 8 characters</p>
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label required">Confirm Password</label>
+                                        <input type="password" id="pwd-confirm" class="form-control col-6" name="confirmPwd" />
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="confirmPwd" data-valmsg-replace="true" id="confirmPwdErrMessage"></span>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -52,12 +57,12 @@
                                     <h2 class="fs-title">Personal Information</h2>
                                     <div class="row">
                                         <div class="form-group col-md-6">
-                                            <label asp-for="FirstName" class="control-label"></label>
+                                            <label asp-for="FirstName" class="control-label required"></label>
                                             <input asp-for="FirstName" class="form-control" />
                                             <span asp-validation-for="FirstName" class="text-danger"></span>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label asp-for="LastName" class="control-label"></label>
+                                            <label asp-for="LastName" class="control-label required"></label>
                                             <input asp-for="LastName" class="form-control" />
                                             <span asp-validation-for="LastName" class="text-danger"></span>
                                         </div>
@@ -71,43 +76,43 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-8">
-                                            <label asp-for="Address" class="control-label"></label>
+                                            <label asp-for="Address" class="control-label required"></label>
                                             <input asp-for="Address" class="form-control" />
                                             <span asp-validation-for="Address" class="text-danger"></span>
                                         </div>
 
                                         <div class="form-group col-md-4">
-                                            <label asp-for="City" class="control-label"></label>
+                                            <label asp-for="City" class="control-label required"></label>
                                             <input asp-for="City" class="form-control" />
                                             <span asp-validation-for="City" class="text-danger"></span>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-4">
-                                            <label asp-for="Prov" class="control-label"></label>
+                                            <label asp-for="Prov" class="control-label required"></label>
                                             <input asp-for="Prov" class="form-control" />
                                             <span asp-validation-for="Prov" class="text-danger"></span>
                                         </div>
                                         <div class="form-group col-4">
-                                            <label asp-for="Postal" class="control-label"></label>
-                                            <input asp-for="Postal" class="form-control" />
+                                            <label asp-for="Postal" class="control-label required"></label>
+                                            <input asp-for="Postal" class="form-control" placeholder="A1A 1A1" id="zipcode"/>
                                             <span asp-validation-for="Postal" class="text-danger"></span>
                                         </div>
                                         <div class="form-group col-4">
-                                            <label asp-for="Country" class="control-label"></label>
+                                            <label asp-for="Country" class="control-label required"></label>
                                             <input asp-for="Country" class="form-control" />
                                             <span asp-validation-for="Country" class="text-danger"></span>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
-                                            <label asp-for="HomePhone" class="control-label"></label>
-                                            <input asp-for="HomePhone" class="form-control" />
+                                            <label asp-for="HomePhone" class="control-label required"></label>
+                                            <input asp-for="HomePhone" class="form-control" placeholder="(999)-999-9999" />
                                             <span asp-validation-for="HomePhone" class="text-danger"></span>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label asp-for="BusPhone" class="control-label"></label>
-                                            <input asp-for="BusPhone" class="form-control" />
+                                            <input asp-for="BusPhone" class="form-control" placeholder="(999)-999-9999"/>
                                             <span asp-validation-for="BusPhone" class="text-danger"></span>
                                         </div>
                                     </div>
@@ -116,16 +121,6 @@
                                 <div class="form-group">
                                     <input type="button" name="previous" class="btn previous action-button-previous" value="Previous" />
                                     <input type="submit" name="submit" id="submit" class="next action-button" value="Submit" />
-                                </div>
-                            </fieldset>
-                            <fieldset id="finish-field">
-                                <div class="form-card">
-                                    <h5 class="fs-title text-center">You Have Successfully Signed Up !</h5> <br><br>
-                                    <div class="row justify-content-center">
-                                        <a id="redirect" asp-controller="Home" asp-action="Index">
-                                            <h3>Book Your Package Today!</h3>
-                                        </a>
-                                    </div> <br><br>
                                 </div>
                             </fieldset>
                         </form>

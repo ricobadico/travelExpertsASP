@@ -1,14 +1,12 @@
 ﻿
 $(document).ready(function () {
+
     // validate the password
-    $('input[type=password]').keyup(function () {
+    $('#password').keyup(function () {
         let pswd = $(this).val();
 
-        // reset the border back to the default while typing
-        $('#pwd').css('border', '1px solid #ced4da');
-
         //validate at least one letter
-        if (pswd.match(/[A-z]/)) {
+        if (pswd.match(/[a-z]/)) {
             $('#letter').removeClass('invalid-pwd').addClass('valid-pwd');
         } else {
             $('#letter').removeClass('valid-pwd').addClass('invalid-pwd');
@@ -36,6 +34,10 @@ $(document).ready(function () {
         }
     }); // end of password validation
 
+    // convert to uppercase
+    $('#zipcode').keyup(function () {
+        $(this).val($(this).val().toUpperCase());
+    });
 
     // validate the username
     $(".next").click(function () {
@@ -65,7 +67,22 @@ $(document).ready(function () {
                 var valid = false;
                 // validate password field
                 if (current_fs[0] == $("#account-field")[0]) {
-                    valid = $("#password").valid();
+                    var firstPwdValid = $("#password").valid();
+                    if ($("#pwd-confirm").val() != "") {
+                        // confirm whether passwords are the same
+                        if ($("#pwd-confirm").val() == $("#password").val()) {
+                            valid = true;
+                        }
+                        else {
+                            $("#confirmPwdErrMessage").html("Password and Confirm Password do not match");
+                            $("#pwd-confirm").focus();
+                            valid = false;
+                        }
+                    }
+                    else { //the Confirm Password is not entered
+                        $("#confirmPwdErrMessage").html("The Confirm Password field is required.");
+                        valid = false;
+                    }
                 }
                 else if (current_fs[0] == $("#info-field")[0]) {
                     valid = $("#msform").valid();
