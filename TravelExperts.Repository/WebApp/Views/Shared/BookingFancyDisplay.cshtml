@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TravelExperts.Repository.Domain.BookingDetails>
+
+@{
+
+    @*Increment counter, since foreach doesn't track it well*@
+    var counter = 0;
+    @*Each url generates a random image from one user form the unsplash API. In the full app, this will be replaced with actual product media*@
+    string[] imgLinkReel =
+    {
+        @"https://source.unsplash.com/user/kalenemsley",
+        @"https://source.unsplash.com/user/jsalvino",
+        @"https://source.unsplash.com/user/liamsimpson",
+        @"https://source.unsplash.com/user/jdgipsonsf",
+        @"https://source.unsplash.com/user/luctribolet",
+        @"https://source.unsplash.com/user/sterlinglanier",
+        "" @*An extra index for luck/ to avoid any indexoutofbounding*@
+    };
+
+}
+
+<div class="d-flex col-10 flex-wrap mx-auto justify-content-center">
+    <h2 style="text-align: center">Your next journey awaits! Here are some recommended trips we think you'll love.</h2>
+
+        @foreach (var bookingDetail in Model)
+        {
+            <div class="rec-container col-3 box-Main rounded-nice bg-Main">
+                @if (bookingDetail.Destination != " " && !String.IsNullOrEmpty(bookingDetail.Destination))
+                {
+                    <h3>@Html.DisplayFor(x => bookingDetail.Destination)</h3>
+                }
+                else
+                {
+                    <h3>@Html.DisplayFor(x => bookingDetail.Description)</h3>
+                }
+                <img class="rec-img rounded" src="@imgLinkReel[counter++]" />
+                <br />
+                <p>Next Trip:@Html.DisplayFor(x => bookingDetail.TripStartDisplay)</p>
+                <p><a asp-action="Index" class="text-light-Main">Learn More</a></p>
+            </div>
+        }
+    </div>
+</div>

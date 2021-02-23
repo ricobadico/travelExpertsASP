@@ -80,42 +80,45 @@
     <footer class="border-top footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    Calgary Office<br />
-                    <address>
-                        1155 8th Ave SW,<br />
-                        Calgary, AB, T2P1N3<br />
-                        Phone (403) 271-9873<br />
-                        Fax (403) 271-9872
-                    </address>
-                </div>
-                <div class="col-md-4">
-                    Okotoks Office<br />
-                    <address>
+                <div class="col-md-4 text-center">
+                    <a data-toggle="collapse" href="#calCollapse" role="button" aria-expanded="false" aria-controls="calCollapse" class="text-light">
+                        Calgary Office</a><br />
+                        <address class="collapse" id="calCollapse">
+                            1155 8th Ave SW,<br />
+                            Calgary, AB, T2P1N3<br />
+                            Phone (403) 271-9873<br />
+                            Fax (403) 271-9872
+                        </address>
+</div>
+                <div class="col-md-4 text-center">
+                    <a data-toggle="collapse" href="#okotCollapse" role="button" aria-expanded="false" aria-controls="okotCollapse" class="text-light">
+                    Okotoks Office</a><br />
+                    <address class="collapse" id="okotCollapse">
                         110 Main Street,<br />
                         Okotoks, AB, T7R3J5<br />
                         Phone (403) 563-2381<br />
                         Fax (403) 563-2382
                     </address>
                 </div>
-                <div class="col-md-4" id="links">
-                    Quick Links
-                    <ul>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        @*If the user is logged in, display the Logout option, otherwise display Login*@
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Manage">My Account</a></li>
-                            <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Record">View Bookings</a></li>
-                            <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
-                        }
-                        else
-                        {
-                            <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
-                            <li><a asp-area="" asp-controller="Customer" asp-action="Index">Register</a></li>
-                        }
-                    </ul>
-                </div>
+                <div class="col-md-4 text-center" id="links">
+                    <a data-toggle="collapse" href="#linksCollapse" role="button" aria-expanded="false" aria-controls="linksCollapse" class="text-light">
+                        Quick Links</a>
+                        <ul class="collapse" id="linksCollapse">
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            @*If the user is logged in, display the Logout option, otherwise display Login*@
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Manage">My Account</a></li>
+                                <li class="nav-item"><a asp-area="" asp-controller="Customer" asp-action="Record">View Bookings</a></li>
+                                <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                            }
+                            else
+                            {
+                                <li class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                                <li><a asp-area="" asp-controller="Customer" asp-action="Index">Register</a></li>
+                            }
+                        </ul>
+</div>
             </div>
             <div id="row footer" class="col-12 text-center pb-1">
                 &copy; 2021 - BLEK Development

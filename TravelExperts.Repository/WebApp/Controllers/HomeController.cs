@@ -26,18 +26,15 @@ namespace WebApp.Controllers
             {
                 int custID = Convert.ToInt32(User.Identity.Name);
 
-                var recommendations = PackageManager.GetRecommendations(custID);
+                var recommendations = PackageManager.GetRecommendations(custID,6);
 
                 ViewBag.Recommendations = recommendations;
+
             }
 
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

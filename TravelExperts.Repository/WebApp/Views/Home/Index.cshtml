@@ -3,14 +3,27 @@
 }
 
 
-<div id="indexdiv" class="text-center">
+
+
+
+
+
+<div id="indexdiv" class="text-center justify-content-center align-items-center">
+    <br/>
     <h1 class="display-4"><partial name="~/Views/Shared/GreetUser.cshtml" /> Welcome To Travel Experts</h1>
-    <p>Register with us to book your travel experience and keep track of upcoming trips.</p>
-    <img src="~/Images/pexels-element-digital-1051077.jpg" width="800" height="auto" />
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <partial name="~/Views/Shared/BookingFancyDisplay.cshtml" model=@ViewBag.Recommendations />
+    }
+    else
+    {
+        <p>Register with us to book your travel experience and keep track of upcoming trips.</p>
+    }
+    <br/>   
 </div>
-
-
-@if (User.Identity.IsAuthenticated)
-{
-    <partial name="~/Views/Shared/BookingDetailsTable.cshtml" model=@ViewBag.Recommendations />
-}
+<div class="d-flex justify-content-center">
+    <img class="rounded" src="~/Images/pexels-element-digital-1051077.jpg" width="800" height="auto" />
+    <br/>
+    <br/>
+</div>

@@ -30,9 +30,6 @@ namespace TravelExpertsWebApp.Controllers
             // Attempt to find a matching user -> if none, returns null
             var usr = AccountManager.Authenticate(loginAttempt.Login, loginAttempt.Password);
 
-            // TODO: delete this debugging code
-            var test = PackageManager.GetRecommendations(143);
-
             // If no match, return to the Login page
             if (usr == null)
             {
