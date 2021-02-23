@@ -36,6 +36,7 @@ namespace TravelExperts.Repository.Domain
         public string CustProv { get; set; }
 
         [Required]
+        [RegularExpression(@"^(?!.*[DFIOQU])[A-VXY][0-9][A-Z][- ]?[0-9][A-Z][0-9]$", ErrorMessage = "Invalid Postal Code Format")]
         [Display(Name = "Postal Code")]
         public string CustPostal { get; set; }
 

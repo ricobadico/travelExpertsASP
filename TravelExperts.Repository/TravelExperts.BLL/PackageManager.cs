@@ -47,11 +47,13 @@ namespace TravelExperts.BLL
 
             // Get a list of all trips the customer has been on
             // This is hard to quantify in the existing data, since no Packages have been ordered..
+            // And a single product/supplier can represent a wide array of things (Hotel - MARKETING AHEAD has a record for a past victoria, autstralia, and toronto trip)
             // As is, we'll use the Description field for booking details, which typically represents a whole booking
             List<string> previousCustTrips = db.Bookings // Search bookings..
                 .Include(booking => booking.BookingDetails) // .. with associated booking details..
                 .Where(booking => booking.CustomerId == custID) // .. with the given customer ID ..
                 .SelectMany(booking => booking.BookingDetails) // .. grabbing all booking details in a flattened list ..
+                .Where(bd => !(bd.Description.Contains("cancellation"))) // .. flesh out non-fun products ..
                     .Select(bd => bd.Description) // .. getting just Descriptions ..
                     .Distinct().ToList(); // .. removing duplicates and converting to list.
 
@@ -69,6 +71,7 @@ namespace TravelExperts.BLL
                 .Where(b => customersWhoTookSameTrip.Contains(b.CustomerId)) // .. get all bookings of the chosen customers ...
                 .SelectMany(booking => booking.BookingDetails) // .. grabbing all booking details in a flattened list ..
                 .Where(bd => bd.Description != "" && !previousCustTrips.Contains(bd.Description)) // .. removing trips the customer has already gone on and nulls..
+                .Where(bd => !(bd.Description.Contains("cancellation"))) // .. flesh out non-fun products ..
                 .AsEnumerable().GroupBy(bd => bd.Description) // .. group by description..
                 .OrderByDescending(bdGroup => bdGroup.Count()) // sort by the description with the most bookings (most popular)
                 .Select(bdGroup => bdGroup.First()) // we don't need the groups anymore, so we just take one instance of the booking detail

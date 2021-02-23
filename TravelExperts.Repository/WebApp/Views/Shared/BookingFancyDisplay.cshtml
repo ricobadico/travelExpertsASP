@@ -34,7 +34,8 @@
                 }
                 <img class="rec-img rounded" src="@imgLinkReel[counter++]" />
                 <br />
-                <p>Next Trip:@Html.DisplayFor(x => bookingDetail.TripStartDisplay)</p>
+                <p>Next Trip: @Html.DisplayFor(x => bookingDetail.TripStartDisplay)</p>
+                <p>Price: @Html.DisplayFor(x => bookingDetail.BasePriceDisplay)</p>
                 <p><a asp-action="Index" class="text-light-Main">Learn More</a></p>
             </div>
         }
