@@ -10,20 +10,25 @@ namespace TravelExpertsWebApp.Models
     {
         [Required]
         [Display(Name = "Current Username")]
-        public string Existingogin { get; set; }
-
-        [Required]
-        [Display(Name = "New Username")]
-        public string UserLogin { get; set; }
+        public string ExistingLogin { get; set; }
 
         [Required]
         [Display(Name = "Current Password")]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$", ErrorMessage = "Invalid Password Format")]
         public string ExistingPass { get; set; }
+
+
+        [Required]
+        [Display(Name = "New Username")]
+        public string NewLogin { get; set; }
 
         [Required]
         [Display(Name = "New Password")]
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$", ErrorMessage = "Invalid Password Format")]
-        public string UserPass { get; set; }
+        public string NewPass { get; set; }
+
+        [Required]
+        [Display(Name = "Confirm Password")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$", ErrorMessage = "Invalid Password Format")]
+        public string ConfirmNewPass { get; set; }
     }
 }

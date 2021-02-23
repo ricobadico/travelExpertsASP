@@ -112,10 +112,6 @@ namespace TravelExpertsWebApp.Controllers
 
         public IActionResult ManageUser()
         {
-            // Get customer ID from user indentity (since this is an authorized action, this is safe)
-            int custID = Convert.ToInt32(User.Identity.Name);
-
-            Customer customer = CustomerManager.FindById(custID);
 
             return View();
 
@@ -123,17 +119,25 @@ namespace TravelExpertsWebApp.Controllers
         // Post overload that takes the submitted changes to their customer data and saves them to the database
         [Authorize]
         [HttpPost]
-        public IActionResult ManageUser(Customer newLoginDetails)
+        public IActionResult ManageUser(UserCredentialModel newLoginDetails)
         {
             int custID = Convert.ToInt32(User.Identity.Name);
             Customer custDBRecord = CustomerManager.FindById(custID);
-            custDBRecord.UserLogin = newLoginDetails.UserLogin;
-            custDBRecord.UserPass = newLoginDetails.UserPass;
 
-
-            // Calls the validation in the domain (which will catch things the database might not, like phone regex)
-            if (TryValidateModel(custDBRecord))
+            if (!(newLoginDetails.NewPass == newLoginDetails.ConfirmNewPass))
             {
+                TempData["PasswordsNotSame"] = "Your existing passwords do  not match";
+            }
+            else if (AccountManager.Authenticate(newLoginDetails.ExistingLogin, newLoginDetails.ExistingPass) == null)
+            {
+                TempData["ErrorMessage"] = "Your existing login or password is incorrect.";
+            }
+            else
+            { 
+
+                custDBRecord.UserLogin = newLoginDetails.NewLogin;
+                custDBRecord.UserPass = AccountManager.HashPassword(newLoginDetails.NewPass);
+
                 // Attempt to update customer in db
                 try
                 {
@@ -144,7 +148,7 @@ namespace TravelExpertsWebApp.Controllers
                 // If valid inputs but update failed, something's up with the database. A special method gets displayed
                 catch
                 {
-                    TempData["ErrorMessage"] = "Something went wrong when trying to update the database. Please try again later or contact customer service.";
+                    TempData["ErrorMessage"] = "Something went wrong. Please check your inputs or contact customer service.";
                     return View();
                 }
             }
