@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using TravelExperts.BLL;
 using WebApp.Models;
 
 namespace WebApp.Controllers
@@ -21,6 +22,15 @@ namespace WebApp.Controllers
 
         public IActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                int custID = Convert.ToInt32(User.Identity.Name);
+
+                var recommendations = PackageManager.GetRecommendations(custID);
+
+                ViewBag.Recommendations = recommendations;
+            }
+
             return View();
         }
 

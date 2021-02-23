@@ -8,3 +8,9 @@
     <p>Register with us to book your travel experience and keep track of upcoming trips.</p>
     <img src="~/Images/pexels-element-digital-1051077.jpg" width="800" height="auto" />
 </div>
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <partial name="~/Views/Shared/BookingDetailsTable.cshtml" model=@ViewBag.Recommendations />
+}
