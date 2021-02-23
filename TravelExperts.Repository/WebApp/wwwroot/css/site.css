@@ -59,7 +59,7 @@ button.accept-policy {
   line-height: inherit;
 }
 
-/* Footer styles
+/* Footer styles --Holly
 -------------------------------------------------- */
 html {
   position: relative;
@@ -96,7 +96,7 @@ address
     font-size: small;
 }
 
-/*Navigation*/
+/*Navigation --Holly */
 @import url("https://fonts.googleapis.com/css?family=Merriweather:900&display=swap");
 
 :root {
@@ -330,7 +330,7 @@ h1 {
 }
 
 
-/*Registration Form*/
+/*Registration Form -- Ronnie*/
 
 #grad1 {
     margin-top: 5rem;
@@ -600,7 +600,7 @@ h1 {
     color: rgb(208,208,208);
 }
 
-/*Title*/
+/*Title -- Eric */
 .headerTitle {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 40px;
@@ -622,7 +622,7 @@ h1 {
 }
 
 
-/*Logo Stylings*/
+/*Logo Stylings -- Eric*/
 .logoImage {
     width: 70px;
     height: 70px;
@@ -724,7 +724,7 @@ h1 {
     }
 }
 
-/*  Recommendation Styles */
+/*  Recommendation Styles --Eric */
 .rec-container{
     width:330px;
     min-width:270px;

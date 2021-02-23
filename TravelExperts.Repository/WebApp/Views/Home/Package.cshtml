@@ -1,52 +1,44 @@
 ﻿@model IEnumerable<TravelExpertsWebApp.Models.PackageViewModel>
 
+@*Done by Holly through copying Eric's model of the Recommended*@
+
+@{
+
+    @*Increment counter, since foreach doesn't track it well*@
+    var counter = 0;
+    @*Each url generates a random image from one user form the unsplash API. In the full app, this will be replaced with actual product media*@
+    string[] imgLinkReel =
+    {
+        @"https://source.unsplash.com/user/kalenemsley",
+        @"https://source.unsplash.com/user/jsalvino",
+        @"https://source.unsplash.com/user/liamsimpson",
+        @"https://source.unsplash.com/user/jdgipsonsf",
+        @"https://source.unsplash.com/user/luctribolet",
+        @"https://source.unsplash.com/user/sterlinglanier"
+    };
+
+}
 @{
     ViewData["Title"] = "Package";
 }
 
-<h1>Current Packages</h1>
+<h3>Current Packages</h3>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PkgName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PkgStartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PkgEndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PkgDesc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PkgBasePrice)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="rec-container box-Main rounded-nice bg-Main">
 
-            <td>
-                @Html.DisplayFor(modelItem => item.PkgName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PkgStartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PkgEndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PkgDesc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PkgBasePrice)
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            <h3>@Html.DisplayFor(modelItem => item.PkgName)</h3>
+
+            <img class="rec-img rounded" src="@imgLinkReel[counter++]" />
+            <br />
+
+            <h2>@Html.DisplayFor(modelItem => item.PkgDesc)</h2>
+            <p>Start Date: @Html.DisplayFor(modelItem => item.StartDateDisplay)</p>
+            <p>End Date:@Html.DisplayFor(modelItem => item.EndDateDisplay)</p>
+            <p>Price: @Html.DisplayFor(modelItem => item.PkgBasePrice)</p>
+            <p><a asp-action="Index" class="text-light-Main">Contact an Agent Today</a></p>
+        </div>
+    }
+</div>

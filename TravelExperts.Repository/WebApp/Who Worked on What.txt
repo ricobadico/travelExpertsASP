@@ -1,0 +1,14 @@
+﻿--Holly--
+Layout, navigation menu, main site css, original migration of database and setting up the projects. Packages page because we could.
+
+
+--Eric--
+Login and authentication. Travel Experts logo.
+
+
+--Ronnie--
+Registration form and css.
+
+
+--Chris--
+Bookings page. Linking bookings with booking details.

@@ -37,6 +37,7 @@ namespace WebApp.Controllers
             return View();
         }
 
+        //To display packages -- Holly
         public IActionResult Package()
         {
             var context = new TravelExpertsContext();
