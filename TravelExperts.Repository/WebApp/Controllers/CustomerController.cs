@@ -75,6 +75,12 @@ namespace TravelExpertsWebApp.Controllers
 
             Customer customer = CustomerManager.FindById(custID);
 
+            customer.CustHomePhone = CustomerManager.FormatPhoneNumber(customer.CustHomePhone);
+            if (customer.CustBusPhone != null && customer.CustBusPhone != String.Empty)
+            {
+                customer.CustBusPhone = CustomerManager.FormatPhoneNumber(customer.CustBusPhone);
+            }
+
             return View(customer);
         }
 
