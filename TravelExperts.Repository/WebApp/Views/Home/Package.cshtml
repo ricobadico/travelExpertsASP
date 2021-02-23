@@ -1,0 +1,52 @@
+﻿@model IEnumerable<TravelExpertsWebApp.Models.PackageViewModel>
+
+@{
+    ViewData["Title"] = "Package";
+}
+
+<h1>Current Packages</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgBasePrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PkgName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkgStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkgEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkgDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkgBasePrice)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -11,7 +11,7 @@ namespace TravelExperts.BLL
 {
     public class PackageManager
     {
-        public static List<Packages> GetAll()
+        public static IEnumerable<Packages> GetAll()
         {
             var context = new TravelExpertsContext();
             var pack = context.Packages.ToList();

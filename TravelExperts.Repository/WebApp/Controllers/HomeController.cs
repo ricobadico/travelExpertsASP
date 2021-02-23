@@ -7,6 +7,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using TravelExperts.BLL;
+using TravelExperts.Repository.Domain;
+using TravelExpertsWebApp.Models;
 using WebApp.Models;
 
 namespace WebApp.Controllers
@@ -33,6 +35,23 @@ namespace WebApp.Controllers
             }
 
             return View();
+        }
+
+        public IActionResult Package()
+        {
+            var context = new TravelExpertsContext();
+            var package = PackageManager.GetAll()
+                .Select(p => new PackageViewModel
+                {
+                    PackageId = p.PackageId,
+                    PkgName = p.PkgName,
+                    PkgDesc = p.PkgDesc,
+                    PkgStartDate = p.PkgStartDate,
+                    PkgEndDate = p.PkgEndDate,
+                    PkgBasePrice = p.PkgBasePrice.ToString("c"),
+                }).ToList();
+
+            return View(package);
         }
 
 
