@@ -3,11 +3,11 @@ Layout, navigation menu, main site css, original migration of database and setti
 
 
 --Eric--
-Login and authentication. Travel Experts logo.
+Login and authentication, updating customer data, logo, recommendations function. Bookings page assistance.
 
 
 --Ronnie--
-Registration form and css.
+Registration form, css, testing and debugging.
 
 
 --Chris--

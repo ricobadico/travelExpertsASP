@@ -12,6 +12,10 @@ using TravelExpertsWebApp.Models;
 
 namespace TravelExpertsWebApp.Controllers
 {
+    /*
+     * Authentication and account management done by Eric
+     */
+
     public class AccountController : Controller
     {
         // Route:   /Account/Login
@@ -80,10 +84,5 @@ namespace TravelExpertsWebApp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // Scaffolded view to be directed to when trying to access a page one isn't authorized to
-        public IActionResult AccessDenied()
-        {
-            return View();
-        }
     }
 }

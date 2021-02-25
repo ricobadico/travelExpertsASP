@@ -1,10 +1,15 @@
 ﻿@model IEnumerable<TravelExperts.Repository.Domain.BookingDetails>
 
-@{
+@*Made by Eric*@
 
-    @*Increment counter, since foreach doesn't track it well*@
+@{
+    // We need a few variables for the page to work
+    @*Increment counter, since foreach doesn't track index well*@
     var counter = 0;
-    @*Each url generates a random image from one user form the unsplash API. In the full app, this will be replaced with actual product media*@
+
+    @*Each url generates a random image from one user form the unsplash API. 
+      In the full app, this will be replaced with actual product media.
+      It has 6 entries since the current home page asks for 6 recommendations. This would need to be changed if that does.*@
     string[] imgLinkReel =
     {
         @"https://source.unsplash.com/user/kalenemsley",
@@ -13,7 +18,7 @@
         @"https://source.unsplash.com/user/jdgipsonsf",
         @"https://source.unsplash.com/user/luctribolet",
         @"https://source.unsplash.com/user/sterlinglanier",
-        "" @*An extra index for luck/ to avoid any indexoutofbounding*@
+        "" @*An extra index for luck/ to avoid indexoutofbounding*@
     };
 
 }
@@ -21,21 +26,24 @@
 <div class="d-flex col-10 flex-wrap mx-auto justify-content-center">
     <h2 style="text-align: center">Your next journey awaits! Here are some recommended trips we think you'll love.</h2>
 
-        @foreach (var bookingDetail in Model)
+        @foreach (var bookingDetail in Model) // Iterate over each trip
         {
             <div class="rec-container col-3 box-Main rounded-nice bg-Main">
-                @if (bookingDetail.Destination != " " && !String.IsNullOrEmpty(bookingDetail.Destination))
+                @if (bookingDetail.Destination != " " && !String.IsNullOrEmpty(bookingDetail.Destination)) // Destination makes for the better title here, but is sometimes empty
                 {
                     <h3>@Html.DisplayFor(x => bookingDetail.Destination)</h3>
                 }
-                else
+                else // Description makes for the backup title
                 {
                     <h3>@Html.DisplayFor(x => bookingDetail.Description)</h3>
                 }
+                @*Throw in a random image for now*@
                 <img class="rec-img rounded" src="@imgLinkReel[counter++]" />
                 <br />
+                @*Add some other details. Note TripStartDate is wrong since we should be pulling from future trips (but they're aren't any)*@
                 <p>Next Trip: @Html.DisplayFor(x => bookingDetail.TripStartDisplay)</p>
                 <p>Price: @Html.DisplayFor(x => bookingDetail.BasePriceDisplay)</p>
+                @*This link doesn't go anywhere now but would take you to the details for the product*@
                 <p><a asp-action="Index" class="text-light-Main">Learn More</a></p>
             </div>
         }

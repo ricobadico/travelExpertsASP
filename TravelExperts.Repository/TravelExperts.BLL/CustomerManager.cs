@@ -7,6 +7,10 @@ using TravelExperts.Repository.Domain;
 
 namespace TravelExperts.BLL
 {
+    /*
+     * Methods for managing customers and their data.
+     */
+
     public class CustomerManager
     {
         public static void Add(Customer customer)
@@ -28,7 +32,7 @@ namespace TravelExperts.BLL
         }
 
         /// <summary>
-        /// Search the database for a customer with a given ID.
+        /// Search the database for a customer with a given ID. [Eric]
         /// </summary>
         /// <param name="custId">Customer ID as an INT.</param>
         /// <returns>Matching customer object if one was found, null if no match.</returns>
@@ -39,7 +43,11 @@ namespace TravelExperts.BLL
 
             return matchCust;
         }
-
+        
+        /// <summary>
+        /// Updates customer data in db based on corresponding customer object [Eric]
+        /// </summary>
+        /// <param name="editedCustomer"></param>
         public static void Update(Customer editedCustomer)
         {
             // Connect to db
@@ -66,6 +74,9 @@ namespace TravelExperts.BLL
             db.SaveChanges();
         }
 
+        /*
+         * Phone-number formatting methods to ensure nice presentation regardless of customer input format. Started by Eric, debugged and perfected by Ronnie.
+         */
         public static string tidyPhoneNumber(string phoneInput)
         {
             // Strip any spaces and special characters from the input

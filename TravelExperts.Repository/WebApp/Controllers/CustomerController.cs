@@ -15,11 +15,16 @@ namespace TravelExpertsWebApp.Controllers
 {
     public class CustomerController : Controller
     {
+        /*
+         * Customer Pages led by Ronnie and Eric
+         */
+
         public IActionResult Index()
         {
             return View();
         }
         
+        //[Ronnie]
         public IActionResult Add(CustomerModel customer)
         {
             // Hashes password for secure storage in the database
@@ -50,11 +55,13 @@ namespace TravelExpertsWebApp.Controllers
             return RedirectToAction("Confirmation");
         }
 
+        //[Ronnie]
         public IActionResult Confirmation()
         {
             return View();
         }
 
+        //[Ronnie]
         public IActionResult Exist(string username)
         {
             var content = "";
@@ -66,7 +73,7 @@ namespace TravelExpertsWebApp.Controllers
             return Content(content);
         }
 
-        // Allows user to edit their details and send them as a form
+        // Allows user to edit their details and send them as a form [Eric & Ronnie]
         [Authorize]
         public IActionResult Manage()
         {
@@ -84,7 +91,7 @@ namespace TravelExpertsWebApp.Controllers
             return View(customer);
         }
 
-        // Post overload that takes the submitted changes to their customer data and saves them to the database
+        // Post overload that takes the submitted changes to their customer data and saves them to the database [Eric]
         [Authorize]
         [HttpPost]
         public IActionResult Manage(Customer editedCustomer)
@@ -110,31 +117,46 @@ namespace TravelExpertsWebApp.Controllers
             return View();
         }
 
-        public IActionResult ManageUser()
+
+        // Page for updating customer login info (requires user to confirm existing login and pass, unlike managing their other details above)
+        [Authorize]
+        public IActionResult ManageLogin()
         {
-
             return View();
-
         }
-        // Post overload that takes the submitted changes to their customer data and saves them to the database
+
+        // Post overload that takes the submitted changes to their customer data and saves them to the database [Eric]
         [Authorize]
         [HttpPost]
-        public IActionResult ManageUser(UserCredentialModel newLoginDetails)
+        public IActionResult ManageLogin(UserCredentialModel newLoginDetails)
         {
+            // Get current user from database
             int custID = Convert.ToInt32(User.Identity.Name);
             Customer custDBRecord = CustomerManager.FindById(custID);
 
-            if (!(newLoginDetails.NewPass == newLoginDetails.ConfirmNewPass))
+            // Run a gauntlet of checks to make sure inputs are valid (this is on top of the data-annotation validation in the page)
+            bool passesValidation = true; // keeps track of whether any validation has failed - just a little tidier for handling all the cases
+
+            if (!(newLoginDetails.NewPass == newLoginDetails.ConfirmNewPass)) // if passwords don't match
             {
-                TempData["PasswordsNotSame"] = "Your existing passwords do  not match";
+                TempData["PasswordsNotSame"] = "Your new passwords do not match";
+                passesValidation = false;
             }
-            else if (AccountManager.Authenticate(newLoginDetails.ExistingLogin, newLoginDetails.ExistingPass) == null)
+            if (AccountManager.Authenticate(newLoginDetails.ExistingLogin, newLoginDetails.ExistingPass) == null) // if existing login credentials are wrong
             {
                 TempData["ErrorMessage"] = "Your existing login or password is incorrect.";
+                passesValidation = false;
             }
-            else
+            if(newLoginDetails.NewLogin != custDBRecord.UserLogin   // if the login is changed from the existing one
+                && CustomerManager.Exists(newLoginDetails.NewLogin)) // and it already exists in the database
+            {
+                TempData["UserTaken"] = "Your existing login or password is incorrect.";
+                passesValidation = false;
+            }
+            
+            // Here's what we want to happen if validation all passes - actually update the customer
+            if(passesValidation == true)
             { 
-
                 custDBRecord.UserLogin = newLoginDetails.NewLogin;
                 custDBRecord.UserPass = AccountManager.HashPassword(newLoginDetails.NewPass);
 
@@ -152,16 +174,17 @@ namespace TravelExpertsWebApp.Controllers
                     return View();
                 }
             }
+
             // If not valid, returning will show the error messages
             return View();
         }
 
-
-        public IActionResult Record()
-        {
-            int custId = Convert.ToInt32(User.Identity.Name);
-            var context = new TravelExpertsContext();
-            var record = PackageManager.GetPackagesByCustId(custId)
+    //[Ronnie]
+    public IActionResult Record()
+    {
+        int custId = Convert.ToInt32(User.Identity.Name);
+        var context = new TravelExpertsContext();
+        var record = PackageManager.GetPackagesByCustId(custId)
     .Select(b => new BookingModel
     {
         BookingId = b.BookingId,

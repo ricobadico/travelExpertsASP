@@ -2,11 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-
-
-
-
+@*Page content and style by Holly. Partials added in after by Eric*@
 
 <div id="indexdiv" class="text-center justify-content-center align-items-center">
     <br />
@@ -14,6 +10,7 @@
 
     @if (User.Identity.IsAuthenticated)
     {
+        // When authenticated, the controller passes recommendation data which is displayed here
         <partial name="~/Views/Shared/BookingFancyDisplay.cshtml" model=@ViewBag.Recommendations />
     }
     else

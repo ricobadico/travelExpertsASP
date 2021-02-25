@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsWebApp.Models
 {
+    /*
+     * Customer model led by Ronnie
+     */
+
     public class CustomerModel
     {
         public int CustomerId { get; set; }

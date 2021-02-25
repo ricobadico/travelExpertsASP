@@ -1,48 +1,62 @@
 ﻿@model TravelExpertsWebApp.Models.UserCredentialModel
 
+@*Eric, using Ronnie's js to help with client-side validation*@
 <div class="container box-Main rounded-nice bg-Main" style="padding-top:1em">
+
     <h3 class="text-center text-light-Main" style="margin:1em auto;">Update Login Information</h3>
     <h5 class="text-center text-light-Main">New passwords must be at least 8 characters and contain a capital letter and a number.</h5>
-    <form asp-action="ManageUser" id="editForm">
+
+    <form asp-action="ManageLogin" id="editForm">
         <div class="row justify-content-center">
+
             <div class="form-group col-md-4">
                 <label class="control-label">New Login:</label>
                 <input asp-for="NewLogin" class="form-control" id="username" />
                 <span asp-validation-for="NewLogin" class="text-light"></span>
             </div>
+
             <div class="form-group col-md-4">
                 <label class="control-label">New Password:</label>
                 <input type="password" asp-for="NewPass" class="form-control" />
                 <span asp-validation-for="NewPass" class="text-light"></span>
             </div>
+
             <div class="form-group col-md-4">
                 <label class="control-label">Confirm New Password:</label>
                 <input type="password" asp-for="ConfirmNewPass" class="form-control" />
                 <span asp-validation-for="ConfirmNewPass" class="text-light"></span>
             </div>
         </div>
+
         <h4 class="text-light text-center">@TempData["PasswordsNotSame"]</h4>
         <hr />
+
         <div class="row justify-content-center">
             <h4 class="text-light-Main">To proceed, please confirm your current login and password:</h4>
         </div>
+
         <div class="row justify-content-center">
             <div class="form-group col-md-4">
                 <label class="control-label">Current User:</label>
                 <input asp-for="ExistingLogin" class="form-control" id="username" />
                 <span asp-validation-for="ExistingLogin" class="text-light"></span>
             </div>
+
             <div class="form-group col-md-4">
                 <label class="control-label">Current Password:</label>
                 <input type="password" asp-for="ExistingPass" class="form-control" />
                 <span asp-validation-for="ExistingPass" class="text-light"></span>
             </div>
         </div>
+
         <div class="form-group d-flex justify-content-center">
             <input type="submit" value="Update" class="text-center mx-auto btn btn-outline-light btn-lg" />
         </div>
+
     </form>
+
     <h4 class="text-light text-center">@TempData["ErrorMessage"]</h4>
+    <h4 class="text-light text-center">@TempData["UserTaken"]</h4>
     <br/>
 </div>
 

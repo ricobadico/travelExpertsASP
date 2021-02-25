@@ -11,12 +11,14 @@ namespace TravelExperts.BLL
 {
     public class PackageManager
     {
+        //[Holly]
         public static IEnumerable<Packages> GetAll()
         {
             var context = new TravelExpertsContext();
             var pack = context.Packages.ToList();
             return pack;
         }
+        //[Chris]
         public static List<Bookings> GetPackagesByCustId(int id)
         {
             var context = new TravelExpertsContext();
@@ -34,7 +36,7 @@ namespace TravelExperts.BLL
         }
 
         /// <summary>
-        /// Uses customer's past trips to recommend new trips for them, based on other customers who have gone on the same trips. 
+        /// Uses customer's past trips to recommend new trips for them, based on other customers who have gone on the same trips. [Eric]
         /// NOTE: This should eventually only return recommendations for trips with future start dates. We don't have the data for that yet, so ommitting it.
         /// </summary>
         /// <param name="custID">The customer's ID</param>
@@ -92,7 +94,7 @@ namespace TravelExperts.BLL
         }
 
         /// <summary>
-        /// Get the top X most popular trips from the database
+        /// Get the top X most popular trips from the database [Eric]
         /// </summary>
         /// <param name="numberOfRecs"></param>
         /// <returns></returns>

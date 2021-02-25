@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsWebApp.Models
 {
+    /*
+     *  User credentials model created by Eric
+     */
+
     public class UserCredentialModel
     {
         [Required]

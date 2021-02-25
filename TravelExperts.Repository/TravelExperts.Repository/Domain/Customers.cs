@@ -4,6 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TravelExperts.Repository.Domain
 {
+    /*
+     * Data annotations added to scaffolded class by Eric
+     */
+
     public partial class Customer
     {
         public Customer()
@@ -12,7 +16,6 @@ namespace TravelExperts.Repository.Domain
             CreditCards = new HashSet<CreditCards>();
             CustomersRewards = new HashSet<CustomersRewards>();
         }
-
         public int CustomerId { get; set; }
 
         [Required]

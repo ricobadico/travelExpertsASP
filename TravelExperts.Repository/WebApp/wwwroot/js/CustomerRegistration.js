@@ -1,4 +1,4 @@
-﻿
+﻿//[Ronnie]
 $(document).ready(function () {
 
     // validate the password

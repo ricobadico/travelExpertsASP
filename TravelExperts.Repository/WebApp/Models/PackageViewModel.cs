@@ -6,6 +6,10 @@ using TravelExperts.Repository.Domain;
 
 namespace TravelExpertsWebApp.Models
 {
+    /*
+     * Package View created by Holly 
+     */
+
     public class PackageViewModel
     {
         public int PackageId { get; set; }

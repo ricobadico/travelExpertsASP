@@ -8,6 +8,10 @@ using TravelExperts.Repository.Domain;
 
 namespace TravelExpertsWebApp.Models
 {
+    /*
+     * Booking model led by Chris with troubleshooting help from Eric
+     */
+
     public class BookingModel
     {
 

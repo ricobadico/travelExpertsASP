@@ -7,9 +7,14 @@ using bcrypt = BCrypt.Net.BCrypt;
 
 namespace TravelExperts.BLL
 {
+    /*
+     * Manages Authentication and password security. [Eric]
+     */
+
+
+
     /// <summary>
-    /// Reduced customer data to function as the model for login
-    /// and as a data transfer object to pass needed customer data around site
+    /// Reduced customer data used as a data transfer object to pass needed customer data around site
     /// </summary>
     public class CredentialModel
     {
