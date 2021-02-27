@@ -48,7 +48,7 @@ namespace TravelExperts.BLL
             TravelExpertsContext db = new TravelExpertsContext();
 
             // Get a list of all trips the customer has been on
-            // This is hard to quantify in the existing data, since no Packages have been ordered..
+            // This is hard to quantify in the existing data, since no Packages have been ordered in the database (otherwise this method would search them).
             // And a single product/supplier can represent a wide array of things (Hotel - MARKETING AHEAD has a record for a past victoria, autstralia, and toronto trip)
             // As is, we'll use the Description field for booking details, which typically represents a whole booking
             List<string> previousCustTrips = db.Bookings // Search bookings..
@@ -78,6 +78,10 @@ namespace TravelExperts.BLL
                 .OrderByDescending(bdGroup => bdGroup.Count()) // sort by the description with the most bookings (most popular)
                 .Select(bdGroup => bdGroup.First()) // we don't need the groups anymore, so we just take one instance of the booking detail
                 .Take(numberOfRecs); // Just need top X
+
+            // This works for a demonstration, but with the data we have in the database we can't arrive at a proper future-trip recommendation.
+            // This is because all existing customer records store trip details in bookingdetails (no customers have packages recorded),
+            // while packages are the only entity with a description that can reflect a future trip.
 
             //If we don't get enough recommendations, we pad them with the general most popular ones
             int recordsDearth = numberOfRecs - recommendations.ToList().Count;

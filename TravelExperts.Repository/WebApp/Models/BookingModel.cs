@@ -31,7 +31,8 @@ namespace TravelExpertsWebApp.Models
         public double? TravelerCount { get; set; }
         public int? CustomerId { get; set; }
         public string TripTypeId { get; set; }
-        public int? PackageId { get; set; }
+        [Display(Name = "Package Name")]
+        public string PackageName { get; set; }
         [Display(Name = "Itinerary Number")]
         public string ItineraryNo { get; set; }
         [Display(Name = "Trip Start Date")]

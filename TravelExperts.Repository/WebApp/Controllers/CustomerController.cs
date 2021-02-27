@@ -190,6 +190,7 @@ namespace TravelExpertsWebApp.Controllers
         BookingId = b.BookingId,
         BookingDate = b.BookingDate, // cast is safe since if the customer booked it, it has a date
         BookingNo = b.BookingNo,
+        PackageName = b.Package is null? null : b.Package.PkgName, //ternary check - if this booking has a package associated, we grab its name
         TravelerCount = b.TravelerCount,
         CustomerId = b.CustomerId,
         TripType = b.TripType,
