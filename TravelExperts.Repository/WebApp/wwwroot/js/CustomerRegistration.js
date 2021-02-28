@@ -34,7 +34,20 @@ $(document).ready(function () {
         }
     }); // end of password validation
 
-    // convert to uppercase
+    // validation for Confirm Password Field while entering
+    $("#pwd-confirm").keyup(function () {
+        if ($(this).val() == "") {
+            //while it is empty field
+            $("#confirmPwdErrMessage").show();
+            $("#confirmPwdErrMessage").html("The Confirm Password field is required.");
+            $(this).focus;
+        }
+        else {
+            $("#confirmPwdErrMessage").hide();
+        }
+    });
+
+    // convert zipcode to uppercase
     $('#zipcode').keyup(function () {
         $(this).val($(this).val().toUpperCase());
     });
@@ -74,12 +87,14 @@ $(document).ready(function () {
                             valid = true;
                         }
                         else {
+                            $("#confirmPwdErrMessage").show();
                             $("#confirmPwdErrMessage").html("Password and Confirm Password do not match");
                             $("#pwd-confirm").focus();
                             valid = false;
                         }
                     }
                     else { //the Confirm Password is not entered
+                        $("#confirmPwdErrMessage").show();
                         $("#confirmPwdErrMessage").html("The Confirm Password field is required.");
                         valid = false;
                     }

@@ -548,15 +548,6 @@ h1 {
         background: #75a4a0;
     }
 
-.fit-image {
-    width: 100%;
-    object-fit: cover
-}
-
-@media (max-width: 600px){
-
-}
-
 #pwd-message{
     font-size: 1rem;
 }
@@ -573,6 +564,54 @@ h1 {
     color: #75a4a0;
     text-decoration: none;
 }
+
+/* Hero Header -- Ronnie*/
+.hero-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Images/hero-header-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    display: flex;
+    position: absolute;
+    top: 85px;
+    right: 0px;
+    bottom:0px;
+}
+
+.hero-header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20%;
+    margin-left: 0;
+    color: #EFEADD;
+}
+
+    .hero-header-content h1 {
+        font-size: 3em;
+        font-weight: bold;
+    }
+
+    .hero-header-content h3 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .hero-header-content input {
+        text-transform: uppercase;
+        color: #EFEADD;
+        padding: 10px;
+        border: 1px solid #EFEADD;
+        border-radius: 10px;
+        text-decoration: none;
+        background-color: #75a4a0;
+    }
+
+        .hero-header-content input:hover {
+            background-color: #516d7e;
+        }
+
+
 
 .bg-Main {
     background: linear-gradient(to bottom, #75a4a0, #75a4a0 0%, #31536f);

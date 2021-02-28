@@ -2,25 +2,29 @@
     ViewData["Title"] = "Home Page";
 }
 
-@*Page content and style by Holly. Partials added in after by Eric*@
+@*Page content and style by Holly. Partials added in after by Eric. Hero Header added by Ronnie*@
 
-<div id="indexdiv" class="text-center justify-content-center align-items-center">
-    <br />
-    <h1 class="display-4"><partial name="~/Views/Shared/GreetUser.cshtml" /> Welcome To Travel Experts</h1>
 
-    @if (User.Identity.IsAuthenticated)
-    {
-        // When authenticated, the controller passes recommendation data which is displayed here
+@if (User.Identity.IsAuthenticated)
+{
+    // When authenticated, the controller passes recommendation data which is displayed here
+    <div id="indexdiv" class="text-center justify-content-center align-items-center">
+        <br />
+        <h1><partial name="~/Views/Shared/GreetUser.cshtml" /></h1>
         <partial name="~/Views/Shared/BookingFancyDisplay.cshtml" model=@ViewBag.Recommendations />
-    }
-    else
-    {
-        <p>Register with us to book your travel experience and keep track of upcoming trips.</p>
-        <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Package">View Our Current Packages</a></li>
-    }
-    <br />
-</div>
-<div class="d-flex justify-content-center">
-    <img class="rounded" src="~/Images/pexels-element-digital-1051077.jpg" width="800" height="auto" />
-    <br/>
-</div>
+    </div>
+}
+else
+{
+    <div class="hero-header">
+        <div class="container">
+            <div class="hero-header-content">
+                <h1 class="display-4">Welcome To Travel Experts</h1>
+                <p>Register with us to book your travel experience and keep track of upcoming trips.</p>
+                <input type="button" value="See More Packages" onclick="location.href='@Url.Action("Package", "Home")'" />
+            </div>
+        </div>
+    </div>
+
+}
+
