@@ -18,10 +18,20 @@
 
 
 
-<h1>Customer Bookings</h1>
+<h1 class="text-center">Customer Bookings</h1>
 @if (Model.Count() == 0)
 {
-    <div>No Bookings available</div>
+    <br/>
+    <br/>
+    <h4 class="text-center">You haven't found the trip of your dreams yet!</h4>
+
+    <h4 class="text-center">
+        Why don't you take a look at our
+        <a asp-area="" asp-controller="Home" asp-action="Package">
+            Current Packages
+        </a>
+        and find your pass to paradise?
+    </h4>
 }
 else
 {

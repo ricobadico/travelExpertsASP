@@ -82,6 +82,7 @@ namespace TravelExperts.BLL
             // This works for a demonstration, but with the data we have in the database we can't arrive at a proper future-trip recommendation.
             // This is because all existing customer records store trip details in bookingdetails (no customers have packages recorded),
             // while packages are the only entity with a description that can reflect a future trip.
+            // On the other hand, the current method as-is could be a good means of gathering past data, to be used to inform future packages.
 
             //If we don't get enough recommendations, we pad them with the general most popular ones
             int recordsDearth = numberOfRecs - recommendations.ToList().Count;
